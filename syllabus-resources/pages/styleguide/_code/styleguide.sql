@@ -1,2 +1,0 @@
--- Toon tabellen
-SHOW TABLES;
