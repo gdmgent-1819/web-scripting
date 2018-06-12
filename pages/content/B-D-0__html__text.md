@@ -4,13 +4,13 @@ title_long: Tekst
 permalink: html/text/
 ---
 
-Headings
+Heading
 --------
 
-Paragraphs
+Paragraph
 ----------
 
-Spans
+Span
 -----
 
 Emphasis
@@ -19,10 +19,10 @@ Emphasis
 Strong
 ------
 
-Quotations
+Quotation
 ----------
 
-Abbreviations
+Abbreviation
 -------------
 
 Superscript
