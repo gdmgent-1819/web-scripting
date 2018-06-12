@@ -1,0 +1,104 @@
+.nav {
+  $nav-font-family: $secondary-font-family;
+  // $nav-item-font-size: 1.2rem;
+  $nav-item-font-size: 1rem;
+  $nav-item-font-weight: 500;
+  $nav-link-color: #bbb;
+  $nav-link-color-hover: #d4d4d4;
+  $nav-link-decoration: none;
+  $nav-link-indent-base: 2rem;
+  $nav-link-indent-increment: 1rem;
+  font-family: $nav-font-family;
+  h2 {
+    display: none;
+  }  
+  ul {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height .8s ease-in-out;
+    li {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .nav__item {
+    line-height: 1.8rem;
+    &--active {
+      > .nav__link {
+        background-color: $ahs-blue;
+        border-radius: 3px;
+        color: white;
+        &::before {
+          color: mix(white, $ahs-blue, 70%);
+          // margin-right: $base-margin;
+        }
+      }
+    }
+  }
+  .nav__link {
+    color: $nav-link-color;
+    display: block;
+    margin: 0 .25rem;
+    padding-left: $nav-link-indent-base;
+    position: relative;
+    text-decoration: none;
+    &:hover {
+      color: $nav-link-color-hover;
+    }
+    &::before {
+      color: mix(white, #384D58, 20%);
+      display: block;
+      left: .5rem;
+      position: absolute;
+    }
+  }
+  .nav__icon {
+    line-height: inherit;
+    left: .25rem;
+    position: absolute;
+  }
+  .nav__list--closed {
+    display: none;
+  }
+  .nav__list--level-0 {
+    > * > .nav__link {
+      color: white;
+      margin-top: 1rem;
+      margin-bottom: .25rem;
+      text-transform: uppercase;
+    }
+  }
+  .nav__list--level-1 {
+    background: mix(white, #384D58, 4%);
+    counter-reset: nav-level-1;
+   > * > .nav__link {
+      counter-increment: nav-level-1;
+      padding-left: $nav-link-indent-base + 0 * $nav-link-indent-increment;
+      &::before {
+        content: counter(nav-level-1);
+      }
+    }
+  }
+  .nav__list--level-2 {
+    counter-reset: nav-level-2;
+    > * > .nav__link {
+      counter-increment: nav-level-2;
+      padding-left: $nav-link-indent-base + 1 * $nav-link-indent-increment;
+      &::before {
+        content: counter(nav-level-1) "." counter(nav-level-2);
+      }
+    }
+  }
+  .nav__list--level-3 {
+    counter-reset: nav-level-3;
+    > * > .nav__link {
+      counter-increment: nav-level-3;
+      padding-left: $nav-link-indent-base + 2 * $nav-link-indent-increment;
+      &::before {
+        content: counter(nav-level-1) "." counter(nav-level-2) "." counter(nav-level-3) ;
+      }
+    }
+  }
+}

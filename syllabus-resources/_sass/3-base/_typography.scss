@@ -1,0 +1,36 @@
+body {
+  background-color: $body-background-color;
+  color: $base-color;
+  direction: ltr;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-synthesis: none;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga', 'kern';
+  -moz-font-feature-settings: 'liga', 'kern';
+  line-height: $base-line-height;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -.021em;
+}
+
+p, ul, ol {
+  margin-top: .5em;
+  margin-bottom: 1em;
+}
+
+a {
+  color: $ahs-blue;
+  &:hover { 
+    color: mix(black, $ahs-blue, 60%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+    h1,
+    h2,
+    h3 {
+      margin-top: .5em;
+    }
+}

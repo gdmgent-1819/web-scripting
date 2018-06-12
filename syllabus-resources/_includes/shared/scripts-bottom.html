@@ -1,0 +1,33 @@
+{%- if layout.scripts.cdn-bottom and layout.scripts.cdn-bottom != empty %}
+
+<!-- CDN Scripts -->
+    {%- for script_src in layout.scripts.cdn-bottom %}
+<script crossorigin="anonymous" src="{{ script_src }}"></script>
+    {%- endfor %}
+{%- endif %}
+{%- if layout.scripts.libs-bottom and layout.scripts.libs-bottom != empty %}
+
+<!-- Libraries Scripts -->
+    {%- for script_src in layout.scripts.libs-bottom %}
+<script src="{{ script_src | relative_url }}"></script>
+    {%- endfor %}
+{%- endif %}
+{%- if layout.scripts.base-bottom and layout.scripts.base-bottom != empty %}
+
+<!-- Template Scripts -->
+    {%- for script_src in layout.scripts.base-bottom %}
+<script src="{{ script_src | relative_url }}"></script>
+    {%- endfor %}
+{%- endif %}
+{%- if page.scripts.bottom and page.scripts.bottom != empty %}
+
+<!-- Page Scripts -->
+    {%- for script_src in page.scripts.bottom %}
+<script src="{{ script_src | relative_url }}"></script>
+    {%- endfor %}
+{%- endif %}
+{%- if site.google-analytics-tracking_id %}
+
+<!-- Google Analytics Scripts -->
+{% include shared/scripts-google-analytics.html %}
+{%- endif %}

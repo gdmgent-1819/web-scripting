@@ -1,0 +1,122 @@
+{
+    "Apostrophe": {
+        "scope": "",
+        "prefix": "'",
+        "body": [
+            "’"
+        ],
+        "description": "Apostrophe sign"
+    },
+    "Ellipsis": {
+        "scope": "",
+        "prefix": "...",
+        "body": [
+            "…"
+        ],
+        "description": "Ellipsis sign"
+    },
+    "Degree": {
+        "scope": "",
+        "prefix": "o",
+        "body": [
+            "°"
+        ],
+        "description": "Degree sign"
+    },
+    "Division": {
+        "scope": "",
+        "prefix": ":",
+        "body": [
+            "÷"
+        ],
+        "description": "Obelus sign"
+    },
+    "Guillemet (single left)": {
+        "scope": "",
+        "prefix": "<",
+        "body": [
+            "‹"
+        ],
+        "description": "Left guillemet sign"
+    },
+    "Guillemet (single, right)": {
+        "scope": "",
+        "prefix": ">",
+        "body": [
+            "›"
+        ],
+        "description": "Right guillemet sign"
+    },
+    "Guillemet (double left)": {
+        "scope": "",
+        "prefix": "<<",
+        "body": [
+            "«"
+        ],
+        "description": "Left double guillemet sign"
+    },
+    "Guillemet (double, right)": {
+        "scope": "",
+        "prefix": ">>",
+        "body": [
+            "»"
+        ],
+        "description": "Right double guillemet sign"
+    },
+    "Multiplication": {
+        "scope": "",
+        "prefix": "x",
+        "body": [
+            "×"
+        ],
+        "description": "Multiplication sign"
+    },
+    "Prime (single)": {
+        "scope": "",
+        "prefix": "'",
+        "body": [
+            "′"
+        ],
+        "description": "Prime sign"
+    },
+    "Prime (double)": {
+        "scope": "",
+        "prefix": "\"",
+        "body": [
+            "″"
+        ],
+        "description": "Double prime sign"
+    },
+    "Quotation (single left)": {
+        "scope": "",
+        "prefix": "'",
+        "body": [
+            "‘"
+        ],
+        "description": "Left quotation sign"
+    },
+    "Quotation (single, right)": {
+        "scope": "",
+        "prefix": "'",
+        "body": [
+            "’"
+        ],
+        "description": "Right quotation sign"
+    },
+    "Quotation (double left)": {
+        "scope": "",
+        "prefix": "\"",
+        "body": [
+            "“"
+        ],
+        "description": "Left double quotation sign"
+    },
+    "Quotation (double, right)": {
+        "scope": "",
+        "prefix": "\"",
+        "body": [
+            "”"
+        ],
+        "description": "Right double quotation sign"
+    },
+}

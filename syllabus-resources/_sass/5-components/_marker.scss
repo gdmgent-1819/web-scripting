@@ -1,0 +1,23 @@
+mark {
+  $colors: (
+    'blue'  : hsl(193,  90%, 60%),
+    'green' : hsl(100,  60%, 60%),
+    'yellow': hsl( 56, 100%, 70%),
+    'orange': hsl( 38, 100%, 65%),
+    'pink'  : hsl(334,  83%, 70%)
+  );
+  background-color: inherit;
+  &.marker {
+    @each $colorKey, $colorValue in $colors {
+      &--#{$colorKey} {
+        --color: #{$colorValue};
+      }
+    }
+    &--fill {
+      background-color: var(--color);
+    }
+    &--underline {
+      box-shadow: inset 0 -.3em 0 var(--color);
+    }
+  }
+}

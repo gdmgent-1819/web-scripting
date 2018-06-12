@@ -1,0 +1,27 @@
+.pagemap {
+  .pagemap__list {
+    background-color: #F6F6F6;
+    border-radius: .5rem;
+    counter-reset: pagemap-item-level-0;
+    margin: 0;
+    padding: .5em 0;
+  }
+  .pagemap__item {
+    counter-increment: pagemap-item-level-0;
+    list-style: none;
+    position: relative;
+  }
+  .pagemap__link {
+    padding-left: 1em;
+    &:hover {
+      text-decoration: none;
+    }
+    &::before {
+      content: counter(pagemap-item-level-0);
+      display: block;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+}

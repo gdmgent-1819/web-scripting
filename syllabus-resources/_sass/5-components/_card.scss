@@ -1,0 +1,70 @@
+.cards-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    @extend %box-shadow;
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    overflow: hidden;
+
+    background: $ahs-white;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+
+    &__image {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 260px;
+        overflow: hidden;
+
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        position: relative;
+        display: block;
+        padding: $base-padding;
+    }
+
+    &__details {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 100%;
+        z-index: 3;
+        padding: $base-padding;
+
+        background: $ahs-white;
+
+        transform: translateY(0px);
+        transition: transform 268ms ease-in 0s;
+    }
+
+    &__btn-details {
+        position: absolute;
+        top: $base-padding;
+        right: $base-padding;
+    }
+
+    &__btn-details-close {
+        position: absolute;
+        top: $base-padding;
+        right: $base-padding;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+    }
+}

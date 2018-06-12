@@ -1,0 +1,33 @@
+a.footnote,
+a.reversefootnote {
+  background-color: color-palette('default', 'light');
+  border-radius: 2px;
+  color: color-palette('default', 'dark');
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: bold;
+  line-height: 1em;
+  padding: 3px 6px;
+  text-decoration: none;
+  &:hover {
+    background-color: color-palette('default');
+    color: color-palette('default', 'light');
+  }
+}
+.footnotes {
+  @extend %box-shadow;
+  border-left: solid 3px #DDD;
+  color: $ahs-dark-grey;
+  font-size: .9rem; 
+  padding: 1rem 0;
+  &::before {
+    content: 'Footnotes';
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-left: $base-margin;
+  }
+}
+[lang^=nl] .footnotes::before {
+  content: 'Voetnoten';
+}

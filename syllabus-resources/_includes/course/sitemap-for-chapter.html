@@ -1,0 +1,11 @@
+{%- if include.path %}
+    {%- assign path = include.path | remove: '.md' %}
+    {%- assign page_path = path | split: '/' %}
+    {%- capture page_path_folder %}{{ page_path[0] }}/{{ page_path[1] }}/{% endcapture %}
+    {%- capture page_path_filename %}{{ page_path[2] }}{% endcapture %} 
+    {%- assign page_level = page_path_filename | split: '__' | first | split: '-' %} 
+    {%- capture pages_tofind %}{{ page_path_folder }}{{ page_level[0] }}{% endcapture %}
+    {%- capture wherevalue %}item.path contains '{{ pages_tofind }}'{% endcapture %}
+    {%- assign pagesContents = site.pages | where_exp:"item", wherevalue %}
+{{ pagesContents.size }}
+{%- endif %}

@@ -1,0 +1,13 @@
+<figure class="figure">
+{%- if (include.local) %}
+    <img class="figure__image" src="{{ include.src | prepend: 'assets/img/' | relative_url }}" alt="{{ include.alt }}">
+{%- else %}
+    <img class="figure__image" src="{{ include.src }}" alt="{{ include.alt }}">
+{%- endif %}
+    <figcaption class="figure__caption">
+{%- if (include.number) %}
+    <span class="badge badge--standard badge--primary">{{ include.number }}</span>
+{%- endif %}
+        {{ include.caption }}
+    </figcaption>
+</figure>

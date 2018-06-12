@@ -1,0 +1,16 @@
+.ahs-main__body {
+  img,
+  svg {
+    max-width: 100%;
+    height: auto;
+    &.image-rounded {
+      border-radius: 50%;
+    }
+    &.image-bordered {
+      border: 1px solid rgba(0, 0, 0, .5);
+    }
+    &.image-shadow {
+      @extend %box-shadow;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+$grid_columns: 12;
+$grid_gutter: 20px;
+.grid {
+  &__wrapper {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__container {
+    display: block;
+    margin: 0 auto;
+    padding: 0 $grid_gutter/2;
+    width: 1140px;
+  }
+
+  &__row {
+    display: block;
+    margin: 0 -$grid_gutter/2;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  &__wrapper,
+  &__container,
+  &__row {
+    @extend %clearfix;
+  }
+
+  @for $i from 1 through $grid_columns {
+    &__column-#{$i} {
+      display: block;
+      float: left;
+      padding: 0 $grid_gutter/2;
+      width: 100% / ($grid_columns/$i);
+    }
+
+    &__offset-#{$i} {
+      margin-left: 100% / ($grid_columns/$i);
+    }
+  }
+}
+
+.flex {
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    @for $i from 1 through $grid_columns {
+      &__column-#{$i} {
+        width: 100%;
+      }
+      &__offset-#{$i} {
+        margin-left: 0;
+      }
+    }
+  }
+}

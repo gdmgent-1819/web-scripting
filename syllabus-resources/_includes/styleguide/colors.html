@@ -1,0 +1,10 @@
+<article>
+    <h1>Colors</h1>
+    <ul>
+{%- for color in site.data.styleguide.colors %}
+        <li class="sg__color">
+            {{ color.name }}
+        </li>
+{%- endfor %}
+    </ul>
+</article>

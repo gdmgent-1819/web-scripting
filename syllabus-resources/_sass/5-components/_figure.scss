@@ -1,0 +1,18 @@
+.figure {
+  &__image {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    height: auto;
+    max-width: 100%;
+    padding: .25rem;
+    &--center {
+      display: block;
+      margin: auto;
+    }
+  }
+  &__caption {
+    color: #999;
+    font-size: 1rem;
+  }
+}

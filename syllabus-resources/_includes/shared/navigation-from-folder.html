@@ -1,0 +1,67 @@
+{%- if include.nav-item %}
+{%- capture where_value %}item.path contains '{{ include.nav-item.folder }}'{% endcapture %}
+{%- assign pages_contents = site.pages | where_exp: 'item', where_value %}
+{%- assign page_level1_nr = 1 %}
+{%- assign page_level2_nr = 1 %}
+{%- assign page_level3_nr = 1 %}
+{%- assign prev_page_level = 1 %}
+{%- assign current_page_level = 1 %}
+{%- assign first_element = true %}
+            <ul class="nav__list nav__list--level-{{current_page_level}}">
+{%- for item in pages_contents %}
+{%- if  item.visibility != 'hidden' %}
+    {%- assign page_level = item.path | remove: include.nav-item.folder | split: '__' | first | split: '-' %}
+    {%- if page_level[1] == '0' and page_level[2] == '0' %}
+        {%- assign current_page_level = 1 %}
+    {%- elsif page_level[1] != '0' and page_level[2] == '0' %}
+        {%- assign current_page_level = 2 %}
+    {%- elsif page_level[1] != '0' and page_level[2] != '0' %}
+        {%- assign current_page_level = 3 %}
+    {%- endif %}
+    {%- if current_page_level > prev_page_level %}
+        <ul class="nav__list nav__list--level-{{ current_page_level }}">
+    {%- elsif current_page_level < prev_page_level %}
+        {%- assign ito = prev_page_level | minus: current_page_level %}
+        {%- for i in (1..ito) %}
+                </li>
+            </ul>
+        {%- endfor %}
+        {%- if prev_page_level == 3 and current_page_level == 2  %}
+            {%- assign page_level2_nr =  page_level2_nr | plus: 1 %}
+            {%- assign page_level3_nr = 1 %}
+        {%- elsif prev_page_level == 2 and current_page_level == 1 %}
+            {%- assign page_level1_nr =  page_level1_nr | plus: 1 %}
+            {%- assign page_level2_nr = 1 %}
+        {%- elsif prev_page_level == 3 and current_page_level == 1 %}
+            {%- assign page_level1_nr =  page_level1_nr | plus: 1 %}
+            {%- assign page_level2_nr = 1 %}
+            {%- assign page_level3_nr = 1 %}
+        {%- endif %}
+    {%- elsif current_page_level == prev_page_level and first_element == false %}
+                </li>
+        {%- if current_page_level == 1 %}
+            {%- assign page_level1_nr =  page_level1_nr | plus: 1 %}
+        {%- elsif current_page_level == 2 %}
+            {%- assign page_level2_nr =  page_level2_nr | plus: 1 %}
+        {%- elsif current_page_level == 3 %}
+            {%- assign page_level3_nr =  page_level3_nr | plus: 1 %}
+        {%- endif %}
+    {%- endif %}
+    {%- capture item_classes %}{% if item.url == page.url %}nav__item--active{% endif %}{% endcapture %}
+                <li class="nav__item {{ item_classes }}">
+                    <a class="nav__link" href="{{ item.url | relative_url }}" title="{{ item.title.long }}">{{ item.title }}</a>
+    {%- if first_element == true %}
+        {%- assign first_element = false %}
+    {%- endif %}
+    {%- if forloop.last == true %}
+        {%- assign ito = current_page_level | minus: 1 %}
+        {%- for i in (1..ito) %}
+                </li>
+            </ul>
+        {%- endfor %}
+    {%- endif %}
+    {%- assign prev_page_level = current_page_level %}
+{%- endif %}
+{%- endfor %}
+            </ul>
+{%- endif %}

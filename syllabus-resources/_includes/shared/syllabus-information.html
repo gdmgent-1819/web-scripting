@@ -1,0 +1,91 @@
+{%- assign syllabus = site.data.shared.syllabi | where: 'id', site.syllabus-id | first %}
+{%- assign institute = site.data.shared.institutes | where: 'id', syllabus.programme.institute | first %}
+{%- assign department = institute.departments | where: 'id', syllabus.programme.department | first %}
+{%- assign domain-group = institute.domain-groups | where: 'id', syllabus.domain-groups | first %}
+{%- assign author-owner = site.data.shared.authors | where: 'id', syllabus.authors[0] | first %}
+{%- assign authors-count = syllabus.authors | size %}
+<table class="table table--primary">
+    <thead>
+        <tr>
+            <th class="text-right">{{ syllabus.title.short }}</th>
+            <th>Informatie</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th class="text-right">
+        {%- case syllabus.type %}
+            {%- when 'DOM' %}
+                Domeingroep
+            {%- when 'MODULE' %}
+                Module
+            {%- when 'OLOD' %}
+                Opleidingsonderdeel
+            {%- else %}
+        {%- endcase %}
+            </th>
+            <td class="weight-bold">{{ syllabus.title.long }}</td>
+        </tr>
+{% if syllabus.domain-group %}
+    {%- assign domain-group = institute.domain-groups | where: 'id', syllabus.domain-group | first %}
+        <tr>
+            <th class="text-right">Domeingroep</th>
+            <td class="weight-bold">{{ domain-group.name | map: syllabus.lang }}</td>
+        </tr>
+{% endif %}
+        <tr>
+            <th class="text-right">Academiejaar</th>
+            <td class="weight-bold">{{ syllabus.academic-year }}</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th class="text-right">Verantwoordelijke docent</th>
+            <td class="weight-bold">{{ author-owner.name.full }}</td>
+        </tr>
+{%- if authors-count > 1 %}
+        <tr>
+            <th class="text-right">Overige docenten</th>
+            <td class="weight-bold">
+    {%- for author in syllabus.authors %}
+        {%- assign author-assistant = site.data.shared.authors | where: 'id', author | first %}
+        {%- if author-assistant == author-owner %}
+            {%- continue %}
+        {%- endif %}
+                {{ author-assistant.name.short }}<br>
+    {%- endfor %}
+            </td>
+        </tr>
+{%- endif %}
+    </tbody>
+    <tbody>
+        <tr>
+            <th class="text-right">Onderwijsinstelling</th>
+            <td class="weight-bold">{{ institute.name | map: syllabus.lang }}</td>
+        </tr>
+        <tr>
+            <th class="text-right">Opleiding</th>
+            <td class="weight-bold">{{ department.name | map: syllabus.lang }}</td>
+        </tr>
+{%- if syllabus.programme.major %}
+    {%- assign major = institute.majors | where: 'id', syllabus.programme.major | first %}
+        <tr>
+            <th class="text-right">Afstudeerrichting</th>
+            <td class="weight-bold">{{ major.name | map: syllabus.lang }}</td>
+        </tr>
+{%- endif %}
+{%- if syllabus.programme.minor %}
+    {%- assign minor = institute.minors | where: 'id', syllabus.programme.minor | first %}
+        <tr>
+            <th class="text-right">Keuzeoptie</th>
+            <td class="weight-bold">{{ minor.name | map: syllabus.lang }}</td>
+        </tr>
+{%- endif %}
+{%- if syllabus.programme.semester %}
+    <tr>
+        <th class="text-right">Semester</th>
+        <td class="weight-bold">{{ syllabus.programme.semester }}</td>
+    </tr>
+{%- endif %}
+    </tbody>
+</table>

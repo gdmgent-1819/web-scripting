@@ -1,0 +1,85 @@
+{
+    "Includes": {
+        "prefix": "syIncludes",
+        "body": [
+            "abbreviations:",
+            "#   - business",
+            "#   - cli",
+            "#   - computer",
+            "#   - countries",
+            "#   - education",
+            "#   - kbd",
+            "hyperlinks:",
+            "#   - assets",
+            "#   - csse",
+            "#   - education",
+            "#   - software",
+            "#   - technology",
+            "shorthands:",
+            "#   - badge",
+            "#   - button",
+            "#   - marker"
+        ],
+        "description": "Includes"
+    },
+    "Timeline": {
+        "prefix": "syTimeline",
+        "body": [
+            "# Week ${1|01,02,03,04,05,06,07,08,09,10,11,12,13|}",
+            "- week: \"$1\"",
+            "  date: ${2:2017-09-21}",
+            "  icon: ${3|flag-o,calendar-check-o,clock-o|}",
+            "  type: ${4|default,warning,danger|}",
+            "  content: |",
+            "    {::nomarkdown}",
+            "    ${0:Lorem ipsum.}",
+            "    {:/}"
+        ],
+        "description": "Timeline"
+    },
+    "Timeline (milestone)": {
+        "prefix": "syTimeline",
+        "body": [
+            "# Week ${1|01,02,03,04,05,06,07,08,09,10,11,12,13|}",
+            "- week: \"$1\"",
+            "  date: ${2:2017-09-21}",
+            "  icon: ${3|map-marker,flag-checkered,university|}",
+            "  type: danger}",
+            "  milestone:",
+            "    uri: \"/opdracht/#milestone-${4|1,2,3,4,5,6,7,8,9,exam-oral,exam-computer,exam-written|}\"",
+            "    label: Milestone $4",
+            "    small: ${5:Lorem ipsum.}",
+            "  content: |",
+            "    ${0:Lorem ipsum.}"
+        ],
+        "description": "Timeline (milestone)"
+    },
+    "Timeline (holiday)": {
+        "prefix": "syTimeline",
+        "body": [
+            "# Week ${1|01,02,03,04,05,06,07,08,09,10,11,12,13|}",
+            "- week: \"$1\"",
+            "  date: ${1:2017-09-21}",
+            "  icon: calendar-check-o",
+            "  type: default",
+            "  content: |",
+            "    {::nomarkdown}",
+            "    ${0|Dag van de arbeid,Hemelvaart,Opleidingsvergadering,Pinkstermaandag|}",
+            "    {:/}"
+        ],
+        "description": "Timeline (holiday period)"
+    },
+    "Timeline (holiday period)": {
+        "prefix": "syTimeline",
+        "body": [
+            "# ${1|Autumn,Christmas,Easter,Summer|}",
+            "- icon: ${2|leaf,tree,sun-o,plane,glass|}",
+            "  type: ${3|default,success|",
+            "  content: |",
+            "    {::nomarkdown}",
+            "    ${0|Herfstperiode,Kerstperiode,Paasperiode,Zomerperiode,Time for a drink!|}",
+            "    {:/}"
+        ],
+        "description": "Timeline (holiday period)"
+    }
+}

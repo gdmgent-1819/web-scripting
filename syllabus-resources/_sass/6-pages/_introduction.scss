@@ -1,0 +1,126 @@
+.ahs-introduction {
+  $color_left_bottom: color-palette('secondary', 'mid-light');
+  $color_center: color-palette('primary', 'base');
+  $color_right_top: color-palette('primary', 'base');
+  $rotation: -45deg;
+  $intro_height: 580px;
+  position: relative;
+  &__header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: $intro_height;
+    justify-content: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    & > h1,
+    & > h2 {
+      color: #FFF; margin: 0;
+      max-width: 800px;
+      padding: 0 $base_margin;
+      text-shadow: 0 1px 5px rgba(0,0,0,.7);
+    }
+  }
+  &__picture {
+    background: -moz-linear-gradient($rotation,  0%,  73%,  100%);
+    background: -ms-linear-gradient($rotation, $color_left_bottom 0%, $color_center 73%, $color_right_top 100%);
+    background: -o-linear-gradient($rotation, $color_left_bottom 0%, $color_center 73%, $color_right_top 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, $color_left_bottom), color-stop(73%, $color_center), color-stop(100%, $color_right_top));
+    background: -webkit-linear-gradient($rotation, $color_left_bottom 0%, $color_center 73%, $color_right_top 100%);
+    background: linear-gradient($rotation, $color_left_bottom 0%, $color_center 73%, $color_right_top 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de76db', endColorstr='#49a5bf', GradientType=1 );
+    height: $intro_height;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    & > img {
+        height: 100%;
+        //mix-blend-mode: overlay;
+        object-fit: cover;
+        opacity: .3;
+        width: 100%;
+    }
+  }
+}
+
+.intro__item {
+  background: color-palette('primary', 'base');
+  color: #fff;
+  height: 200px;
+  position: relative;
+  &-description {
+  }
+  &-heading {
+    color: #fff;
+  }
+  &-label {
+    bottom: 0;
+    font-size: 2em;
+    left: 0;
+    position: absolute;
+  }
+  &-link {
+    bottom: 0;
+    color: #fff;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.intro-buttons {
+  margin-top: 70px;
+  &__item {
+    color: #FFF;
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .2s ease-out;
+    &-label {
+      background: transparent;
+      border-radius: 50%;
+      border: solid 2px #FFF;
+      display: block;
+      font-size: 3rem;
+      height: 5rem;
+      line-height: 4.8rem;
+      margin: 0 auto;
+      text-align: center;
+      transition: all .2s ease-out;
+      width: 5rem;
+    }
+    &-title {
+      color: rgba(255,255,255,.8);
+      font-size: 1.7rem;
+      margin: 5px 0;
+      transition: all .2s ease-out;
+    }
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.1);
+    }
+    &:hover &-label {
+      color: color-palette('primary', 'base');
+    }
+    &:hover &-title {
+      color: rgba(255,255,255,1);
+      text-shadow: 0 3px 5px rgba(0,0,0,.3);
+    }
+    &:hover &-label { 
+      background: #FFF;
+      border-color: #FFF;
+      box-shadow: 0 3px 5px rgba(0,0,0,.5);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro-buttons {
+    margin-top: 20px;
+  }
+}

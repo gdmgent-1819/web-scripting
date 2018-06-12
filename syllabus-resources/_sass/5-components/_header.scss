@@ -1,0 +1,99 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: ahs-color-palette('ahs-blue');
+  font-family: $secondary-font-family;
+  font-weight: 300;
+
+}
+h5,
+h6 {
+  color: ahs-color-palette('ahs-blue', 'mid-dark');
+  font-family: $primary-font-family;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+h2 {
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 1.7rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.2rem;
+}
+h6 {
+  font-size: 1.1rem;
+}
+
+.ahs-main__body {
+  counter-reset: body-h2;
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    &::before {
+      border-bottom: 1px solid ahs-color-palette('ahs-blue');
+      display: inline-block;
+      font-size: 80%;
+      min-width: 2.5rem;
+      padding-right: .5rem;
+    }
+  }
+  > h2 {
+    counter-increment: body-h2;
+    counter-reset: body-h3;
+    &::before {
+      content: counter(body-h2);
+    }
+  }
+  > h3 {
+    counter-increment: body-h3;
+    counter-reset: body-h4;
+    &::before {
+      border-color: ahs-color-palette('ahs-fuchsia');
+      content: counter(body-h2) "." counter(body-h3);
+    }
+  }
+  > h4 {
+    counter-increment: body-h4;
+    counter-reset: body-h5;
+    &::before {
+      border-color: ahs-color-palette('ahs-orange');
+      content: counter(body-h2) "." counter(body-h3) "." counter(body-h4);
+    }
+  }
+  > h5 {
+    counter-increment: body-h5;
+    counter-reset: body-h6;
+    &::before {
+      border-color: ahs-color-palette('ahs-green');
+      content: counter(body-h5, upper-alpha);
+    }
+  }
+  > h6 {
+    counter-increment: body-h6;
+    &::before {
+      border-color: ahs-color-palette('ahs-grey');
+      content: counter(body-h5, upper-alpha) "." counter(body-h6, lower-alpha);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@each $align in left, center, right, justify {
+  .text-#{$align} {
+    text-align: $align !important;
+  }
+}
+
+@each $weight in normal, bold {
+  .weight-#{$weight} {
+    font-weight: $weight !important;
+  }
+}
+
+@each $style in normal, italic {
+  .style-#{$style} {
+    font-style: $style !important;
+  }
+}

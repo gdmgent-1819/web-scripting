@@ -1,0 +1,23 @@
+.body-footer {
+  background-color: #EEE;
+  border-top: solid 1px mix(white, $ahs-dark-grey, 70%);
+  bottom: 0;
+  color: $ahs-dark-grey;
+  display: flex;
+  font-size: 1rem;
+  left: 0;
+  padding: $base-margin ($base-margin * 4);
+  position: absolute;
+  right: 0;
+  > * {
+    white-space: nowrap;
+  }
+  .body-footer__copy {
+    margin-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .body-footer__update {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,658 @@
+{
+    "Badge": {
+        "prefix": "syBadge",
+        "body": [
+            "*$0*{:.badge.badge--${1|standard,pill|}.badge--${2|default,primary,danger,info,warning,success|}}"
+        ],
+        "description": "Badge"
+    },
+    "Button (custom link)": {
+        "prefix": "syButton",
+        "body": [
+            "[${0:Label}](${3|https://,http://|}){:.button.button--${1|standard,outline|}.button--${2|default,primary,secundary,tertiary|}}"
+        ],
+        "description": "Button (custom link)"
+    },
+    "Button (predefined link)": {
+        "prefix": "syButton",
+        "body": [
+            "[${0:Label}][]{:.button.button--${1|standard,outline|}.button--${2|default,primary,secundary,tertiary|}}"
+        ],
+        "description": "Button (predefined link)"
+    },
+    "Card": {
+        "prefix": "syCard",
+        "body": [
+            "> ${1:Title}",
+            "> ---",
+            "> - $0",
+            "{:.card}"
+        ],
+        "description": "Card"
+    },
+    "Card (general): definition, definitie": {
+        "prefix": "syCardGeneral",
+        "body": [
+            "> ${1|Definition,Definitie|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-definition}"
+        ],
+        "description": "Card (general): definition, definitie"
+    },
+    "Card (general): do, doen": {
+        "prefix": "syCardGeneral",
+        "body": [
+            "> ${1|Do,Do's,Doen|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-thumbs-up}"
+        ],
+        "description": "Card (general): do, doen"
+    },
+    "Card (general): don't, niet doen": {
+        "prefix": "syCardGeneral",
+        "body": [
+            "> ${1|Don't,Don'ts,Niet doen|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-thumbs-down}"
+        ],
+        "description": "Card (general): don't, niet doen"
+    },
+    "Card (general): example, voorbeeld": {
+        "prefix": "syCardGeneral",
+        "body": [
+            "> ${1|Example,Examples,Voorbeeld,Voorbeelden|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-example}"
+        ],
+        "description": "Card (general): example, voorbeeld"
+    },
+    "Card (general): know, weetje": {
+        "prefix": "syCardGeneral",
+        "body": [
+            "> ${1|Did you know?,Weetje,Weetjes|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-know}"
+        ],
+        "description": "Card (general): know, weetje"
+    },
+    "Card (general): remark, opmerking": {
+        "prefix": "syCardGeneral",
+        "body": [
+            "> ${1|Remark,Remarks,Opmerking,Opmerkingen|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-remark}"
+        ],
+        "description": "Card (general): remark, opmerking"
+    },
+    "Card (general): tip": {
+        "prefix": "syCardGeneral",
+        "body": [
+            "> ${1|Tip,Tips|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-tip}"
+        ],
+        "description": "Card (general): tip"
+    },
+    "Card (general): task, taak": {
+        "prefix": "syCardGeneral",
+        "body": [
+            "> ${1|Task,Tasks,Taak,Taken|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-task}"
+        ],
+        "description": "Card (general): task, taak"
+    },
+    "Card (general): warning, caution, opgelet": {
+        "prefix": "syCardGeneral",
+        "body": [
+            "> ${1|Warning,Caution,Opgelet|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-warning}"
+        ],
+        "description": "Card (general): warning, caution, opgelet"
+    },
+    "Card (reference): reference, bron": {
+        "prefix": "syCardReference",
+        "body": [
+            "> ${1|Reference,References,Bron,Bronnen|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-source}"
+        ],
+        "description": "Card (reference): reference, bron"
+    },
+    "Card (reference): see, zie ook": {
+        "prefix": "syCardReference",
+        "body": [
+            "> ${1|See,Zie ook|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-${2|book,link,video|}}"
+        ],
+        "description": "Card (reference): see, zie ook"
+    },
+    "Card (moment): briefing": {
+        "prefix": "syCardMoment",
+        "body": [
+            "> Briefing",
+            "> ---",
+            "> - $0",
+            "{:.card.card-milestone--start #milestone-start}"
+        ],
+        "description": "Card (moment): briefing"
+    },
+    "Card (moment): milestone": {
+        "prefix": "syCardMoment",
+        "body": [
+            "> Milestone ${1|1,2,3,4,5,6,7,8,9|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-milestone#milestone-$1}"
+        ],
+        "description": "Card (moment): milestone"
+    },
+    "Card (moment): milestone (end)": {
+        "prefix": "syCardMoment",
+        "body": [
+            "> Milestone ${1|1,2,3,4,5,6,7,8,9|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-milestone--end #milestone-end}"
+        ],
+        "description": "Card (moment): milestone (end)"
+    },
+    "Card (moment): examination": {
+        "prefix": "syCardMoment",
+        "body": [
+            "> ${1|Oral Examination,Written Examination (on paper),Written Examination (on paper),Mondeling Examen,Schriftelijk Examen (op papier),Schriftelijk Examen (aan computer)|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-exam-${2|computer,oral,written|} #milestone-exam-$2}"
+        ],
+        "description": "Card (moment): examination"
+    },
+    "CLI: console (Linux), terminal (macOS)": {
+        "prefix": "syCli",
+        "body": [
+            "{% highlight ${1|console,terminal|} %}",
+            "$ $0",
+            "{% endhighlight %}"
+        ],
+        "description": "CLI: console (Linux), terminal (macOS)"
+    },
+    "CLI: posh (PowerShell)": {
+        "prefix": "syCli",
+        "body": [
+            "{% highlight posh %}",
+            "PS> $0",
+            "{% endhighlight %}"
+        ],
+        "description": "CLI: posh (PowerShell)"
+    },
+    "CLI: cmd (Windows Command)": {
+        "prefix": "syCli",
+        "body": [
+            "{% highlight cmd %}",
+            "C:> $0",
+            "{% endhighlight %}"
+        ],
+        "description": "CLI: cmd (Windows Command)"
+    },
+    "Code (simple): code, emmet": {
+        "prefix": "syCode",
+        "body": [
+            "{% highlight ${1|code,emmet|} linenos %}",
+            "$0",
+            "{% endhighlight %}"
+        ],
+        "description": "Code block (simple): code, emmet"
+    },
+    "Code (simple raw): blade, liquid, twig": {
+        "prefix": "syCode",
+        "body": [
+            "{% highlight ${1|blade,liquid,twig|} linenos %}{% raw %}",
+            "$0",
+            "{% endraw %}{% endhighlight %}"
+        ],
+        "description": "Code block (raw): blade, liquid, twig"
+    },
+    "Code (file)": {
+        "prefix": "syCode",
+        "body": [
+            "{% highlight ${1|bash,bat,conf,cs,css,gherkin,hbs,html,ini,js,json,md,php,po,py,rb,scss,sh,sql,swift,ts,vue,xml,yml|} linenos %}",
+            "$0",
+            "{% endhighlight %}{:data-file=\"${2:filepath}.$1\"}"
+        ],
+        "description": "Code block (file): bash, bat, conf, cs, css, gherkin, hbs, html, ini, js, json, md, php, po, py, rb, scss, sh, sql, swift, ts, vue, xml, yml"
+    },
+    "Code (file include): bash, bat, conf, cs, css, gherkin, hbs, html, ini, js, json, md, php, po, py, rb, scss, sh, sql, ts, vue, xml, yml": {
+        "prefix": "syCode",
+        "body": [
+            "{% highlight ${1|bash,bat,conf,cs,css,gherkin,hbs,html,ini,js,json,md,php,po,py,rb,scss,sh,sql,swift,ts,vue,xml,yml|} linenos %}",
+            "{% include_relative _code/${0:filepath}.$1 %}",
+            "{% endhighlight %}{:data-file=\"${0:filepath}.$1\"}"
+        ],
+        "description": "Code (file include): bash, bat, conf, cs, css, gherkin, hbs, html, ini, js, json, md, php, po, py, rb, scss, sh, sql, swift, ts, vue, xml, yml"
+    },
+    "Code (file include): blade, twig": {
+        "prefix": "syCode",
+        "body": [
+            "{% highlight ${1|blade,twig|} linenos %}",
+            "{% include_relative _code/${0:filepath}.$1.php %}",
+            "{% endhighlight %}{:data-file=\"${0:filepath}.$1.php\"}"
+        ],
+        "description": "Code (file include): blade, twig"
+    },
+    "Code (file include): inky": {
+        "prefix": "syCode",
+        "body": [
+            "{% highlight ${1|inky|} linenos %}",
+            "{% include_relative _code/${0:filepath}.$1.html %}",
+            "{% endhighlight %}{:data-file=\"${0:filepath}.$1.html\"}"
+        ],
+        "description": "Code (file include): inky"
+    },
+    "Code (file include): NGINX Config": {
+        "prefix": "syCode",
+        "body": [
+            "{% highlight nginx linenos %}",
+            "{% include_relative _code/${0:filepath}.conf %}",
+            "{% endhighlight %}{:data-file=\"${0:filepath}.conf\"}"
+        ],
+        "description": "Code (file include): NGINX Config"
+    },
+    "Code (file raw): blade, twig": {
+        "prefix": "syCode",
+        "body": [
+            "{% highlight ${1|blade,twig|} linenos %}{% raw %}",
+            "$0",
+            "{% endraw %}{% endhighlight %}{:data-file=\"${2:filepath}.$1.php\"}"
+        ],
+        "description": "Code (raw file): blade, twig"
+    },
+    "Comment": {
+        "prefix": "syComment",
+        "body": [
+            "{% comment %}",
+            "$0",
+            "{% endcomment %}"
+        ],
+        "description": "Code (raw file): blade, twig"
+    },
+    "Icon (Font Awesome): browsers": {
+        "prefix": "syIconFontAwesome",
+        "body": [
+            "$0*&nbsp;*{:.fab.fa-fw.fa-${1|chrome,edge,firefox,opera,safari|}}${2|Chrome,Edge,Firefox,Firefox Developer Edition,Opera,Safari|}"
+        ],
+        "description": "Icon (Font Awesome): browsers"
+    },
+    "Icon (Font Awesome): cms": {
+        "prefix": "syIconFontAwesome",
+        "body": [
+            "$0*&nbsp;*{:.fab.fa-fw.fa-${1|drupal,joomla,wordpress|}}${2|Drupal,Joomla,WordPress|}"
+        ],
+        "description": "Icon (Font Awesome): cms"
+    },
+    "Icon (Font Awesome): file": {
+        "prefix": "syIconFontAwesome",
+        "body": [
+            "$0*&nbsp;*{:.fas.fa-fw.fa-file${1|file,file-image,file-archive,file-audio,file-alt,file-video,file-excel,file-powerpoint,file-word,file-pdf|}}${2|Bestand,Afbeelding,Archief,Code,Geluid,Tekst,Video,Microsoft Excel,Microsoft PowerPoint,Microsoft Word,PDF|}"
+        ],
+        "description": "Icon (Font Awesome): file"
+    },
+    "Icon (Font Awesome): general": {
+        "prefix": "syIconFontAwesome",
+        "body": [
+            "$0*&nbsp;*{:.fas.fa-fw.fa-${1|comment,download|}}${2|Comment,Download|}"
+        ],
+        "description": "Icon (Font Awesome): general"
+    },
+    "Icon (Font Awesome): os": {
+        "prefix": "syIconFontAwesome",
+        "body": [
+            "$0*&nbsp;*{:.fab.fa-fw.fa-${1|android,apple,linux,windows|}}${2|Android,iOS,macOS,Raspbian,Ubuntu,Windows|}"
+        ],
+        "description": "Icon (Font Awesome): os"
+    },
+    "Icon (Font Awesome): services": {
+        "prefix": "syIconFontAwesome",
+        "body": [
+            "$0*&nbsp;*{:.fab.fa-fw.fa-${1|behance,bitbucket,codepen,dribbble,dropbox,facebook,flickr,git,github,gitlab,jsfiddle,linkedin,maxcdn,pinterest,skype,slack,trello,twitter,vimeo,youtube|}}${2|Behance,Bitbucket,CodePen,Dribble,Dropbox,Facebook,Flickr,Git,GitHub,GitLab,JSFiddle,LinkedIn,maxcdn,Pinterest,Skype,Slack,Trello,Twitter,Vimeo,YouTube|}"
+        ],
+        "description": "Icon (Font Awesome): services"
+    },
+    "Icon (Font Awesome): technology (Generic)": {
+        "prefix": "syIconFontAwesome",
+        "body": [
+            "$0*&nbsp;*{:.fas.fa-fw.fa-${1|code-branch,code,terminal|}}${2|Branch,Code,Terminal|}"
+        ],
+        "description": "Icon (Font Awesome): technology (Generic)"
+    },
+    "Icon (Font Awesome): technology (Frameworks)": {
+        "prefix": "syIconFontAwesome",
+        "body": [
+            "$0*&nbsp;*{:.fab.fa-fw.fa-${1|angular,grunt,gulp,font-awesome,laravel,react,vuejs|}}${2|Angular,Grunt,Gulp.js,Font Awesome,Laravel,React,Vue|}"
+        ],
+        "description": "Icon (Font Awesome): technology (Frameworks)"
+    },
+    "Icon (Font Awesome): technology (Languages)": {
+        "prefix": "syIconFontAwesome",
+        "body": [
+            "$0*&nbsp;*{:.fab.fa-fw.fa-${1|css3-alt,html5,js,less,php,sass|}}${2|CSS3,HTML5,JavaScript,Less,PHP,Sass|}"
+        ],
+        "description": "Icon (Font Awesome): technology (Languages)"
+    },
+    "Includes": {
+        "prefix": "syIncludes",
+        "body": [
+            "{%- include includes.md %}"
+        ],
+        "description": "Includes (Liquid)"
+    },
+    "Keyboard: combination": {
+        "prefix": "syKey",
+        "body": [
+            "<kbd class=\"keyboard\"><kbd>$0Ctrl</kbd>+<kbd>C</kbd></kbd>"
+        ],
+        "description": "Keyboard: combination"
+    },
+    "Keyboard: key": {
+        "prefix": "syKey",
+        "body": [
+            "<kbd>${1|Alt,AltGr,Backspace,&#8612;,Cmd,Ctrl,End,Enter,&#8626;,Return,Esc,F1,F2,F3,F4,F5,F6,F7,F8,F9,F10,F11,F12,Home,Ins,Del,&#8679; Shift,&#8682; Shift Lock,Tab,&#8677;,&#8633;,<i class=\"fa fa-windows\"></i>,PgDn,PgUp,&larr;,&rarr;,&uarr;,&darr;,LMB,LMK,RMB,RMK,SW|}</kbd>"
+        ],
+        "description": "Keyboard: key"
+    },
+    "Keyboard: menu": {
+        "prefix": "syKey",
+        "body": [
+            "<kbd class=\"menu\"><kbd>$0Level1&hellip;</kbd>&#9656;<kbd>Level2</kbd>&#9656;<kbd>Level3</kbd></kbd>"
+        ],
+        "description": "Keyboard: menu"
+    },
+    "MathJax (Jekyll Front Matter)": {
+        "prefix": "syMath",
+        "body": [
+            "mathjax: enabled"
+        ],
+        "description": "MathJax (Jekyll Front Matter)"
+    },
+    "MathJax (Markdown)": {
+        "prefix": "syMath",
+        "body": [
+            "${1|$,$$|}${0:MathJax expression}$1"
+        ],
+        "description": "MathJax (Markdown)"
+    },
+    "Marker": {
+        "prefix": "syMarker",
+        "body": [
+            "<mark class=\"marker--${1|fill,underline|} marker--${2|blue,green,orange,pink,yellow|}\">$0</mark>"
+        ],
+        "description": "Marker"
+    },
+    "List": {
+        "prefix": "syList",
+        "body": [
+            " ${1|-,1.|} $2",
+            "   $1 $3",
+            " $1 $0"
+        ],
+        "description": "List"
+    },
+    "Quote (simple)": {
+        "prefix": "syQuote",
+        "body": [
+            "> ${1:Quote.}",
+            ">",
+            "> **${2:Full Name of Author}** (${0:occupation of author})",
+            "{:.quote}"
+        ],
+        "description": "Quote (simple)"
+    },
+    "Quote (bilingual)": {
+        "prefix": "syQuote",
+        "body": [
+            "> ${1:Original quote.}",
+            ">",
+            "> (\"${2:Translation of quote}\")",
+            ">",
+            "> **${3:Full Name of Author}** (${0:occupation of author})",
+            "{:.quote}"
+        ],
+        "description": "Quote (bilingual)"
+    },
+    "Quote (law)": {
+        "prefix": "syQuote",
+        "body": [
+            "> ${1:Title}",
+            "> ---",
+            "> ${0:Law.}",
+            ">",
+            "> **${2:Full Name of Author}**[^${3:reference}] (${4:occupation of author})",
+            "{:.card.card-quote}",
+            "",
+            "[^${3:reference}]: ${5:Surname, N.} (${6:1900}, ${7|January,February,March,April,May,June,July,August,September,October,November,December|}). [${8:Title of source}](${9|https://,https://|}). *${10:Title of publication},* ${11:Location}."
+        ],
+        "description": "Quote (law)"
+    },
+    "Software": {
+        "prefix": "sySoftware",
+        "body": [
+            "> ${1:Application}",
+            "> ---",
+            "> ${0:Description.}  ",
+            "> <kbd class=\"menu\"><kbd>$0Level1&hellip;</kbd>&#9656;<kbd>Level2</kbd>&#9656;<kbd>Level3</kbd></kbd>",
+            "{:.card.card-app}"
+        ],
+        "description": "Browser: chrome, edge, firefox, opera, safari"
+    },
+    "Software Browser: chrome, edge, firefox, opera, safari": {
+        "prefix": "sySoftwareBrowser",
+        "body": [
+            "> ${1|Chrome,Edge,Firefox,Firefox Developer Edition,Opera,Safari|}",
+            "> ---",
+            "> - $0",
+            "{:.card.card-${2|chrome,edge,firefox,opera,safari|}}"
+        ],
+        "description": "Browser: chrome, edge, firefox, opera, safari"
+    },
+    "Software CMS: drupal, joomla, wordpress": {
+        "prefix": "sySoftwareCms",
+        "body": [
+            "> ${1|Drupal,Joomla,WordPress|}",
+            "> ---",
+            "> ${0:Description.}  ",
+            "> <kbd class=\"menu\"><kbd>$0Level1&hellip;</kbd>&#9656;<kbd>Level2</kbd>&#9656;<kbd>Level3</kbd></kbd>",
+            "{:.card.card-${2|drupal,joomla,wordpress|}}"
+        ],
+        "description": "Browser: chrome, edge, firefox, opera, safari"
+    },
+    "Software OS: Android, iOS, macOS, Raspbian, Ubuntu, Windows": {
+        "prefix": "sySoftwareOs",
+        "body": [
+            "> ${1|Android,iOS,macOS,Raspbian,Ubuntu,Windows|}",
+            "> ---",
+            "> ${3:Description.}  ",
+            "> <kbd class=\"menu\"><kbd>$0Level1&hellip;</kbd>&#9656;<kbd>Level2</kbd>&#9656;<kbd>Level3</kbd></kbd>",
+            "{:.card.card-${2|android,apple,linux,windows|}}"
+        ],
+        "description": "OS: Android, iOS, macOS, Raspbian, Ubuntu, Windows"
+    },
+    "Table": {
+        "prefix": "syTable",
+        "body": [
+            "| Column A | Column B | Column C |",
+            "|:---------|:--------:|---------:|",
+            "| Cel A1   | Cel B1   | Cel C1   |",
+            "| Cel A2   | Cel B2   | Cel C2   |",
+            "|----------|----------|----------|",
+            "| Cel A3   | Cel B3   | Cel C3   |",
+            "| Cel A4   | Cel B4   | Cel C4   |",
+            "| =========|==========|==========|",
+            "| Foot A   | Foot B   | Foot C   |",
+            "{:.table}"
+        ],
+        "description": "Table (default)"
+    },
+    "Table (color)": {
+        "prefix": "syTable",
+        "body": [
+            "| Column A | Column B | Column C |",
+            "|:---------|:--------:|---------:|",
+            "| Cel A1   | Cel B1   | Cel C1   |",
+            "| Cel A2   | Cel B2   | Cel C2   |",
+            "|----------|----------|----------|",
+            "| Cel A3   | Cel B3   | Cel C3   |",
+            "| Cel A4   | Cel B4   | Cel C4   |",
+            "| =========|==========|==========|",
+            "| Foot A   | Foot B   | Foot C   |",
+            "{:.table.table--${1|primary,secondary,tertiary|}}"
+        ],
+        "description": "Table (color)"
+    },
+    "Table (color & modifier)": {
+        "prefix": "syTable",
+        "body": [
+            "| Column A | Column B | Column C |",
+            "|:---------|:--------:|---------:|",
+            "| Cel A1   | Cel B1   | Cel C1   |",
+            "| Cel A2   | Cel B2   | Cel C2   |",
+            "|----------|----------|----------|",
+            "| Cel A3   | Cel B3   | Cel C3   |",
+            "| Cel A4   | Cel B4   | Cel C4   |",
+            "| =========|==========|==========|",
+            "| Foot A   | Foot B   | Foot C   |",
+            "{:.table.table--${1|primary,secondary,tertiary|}}.table--{$2|bordered,hover,striped|}}"
+        ],
+        "description": "Table (color & modifier)"
+    },
+    "Table (color, modifier & size)": {
+        "prefix": "syTable",
+        "body": [
+            "| Column A | Column B | Column C |",
+            "|:---------|:--------:|---------:|",
+            "| Cel A1   | Cel B1   | Cel C1   |",
+            "| Cel A2   | Cel B2   | Cel C2   |",
+            "|----------|----------|----------|",
+            "| Cel A3   | Cel B3   | Cel C3   |",
+            "| Cel A4   | Cel B4   | Cel C4   |",
+            "| =========|==========|==========|",
+            "| Foot A   | Foot B   | Foot C   |",
+            "{:.table.table--${1|primary,secondary,tertiary|}}.table--${2|bordered,hover,striped|}.table--${3|compact,condensed|}}"
+        ],
+        "description": "Table (color, modifier & size)"
+    },
+    "Table (color & size)": {
+        "prefix": "syTable",
+        "body": [
+            "| Column A | Column B | Column C |",
+            "|:---------|:--------:|---------:|",
+            "| Cel A1   | Cel B1   | Cel C1   |",
+            "| Cel A2   | Cel B2   | Cel C2   |",
+            "|----------|----------|----------|",
+            "| Cel A3   | Cel B3   | Cel C3   |",
+            "| Cel A4   | Cel B4   | Cel C4   |",
+            "| =========|==========|==========|",
+            "| Foot A   | Foot B   | Foot C   |",
+            "{:.table.table--${1|primary,secondary,tertiary|}}.table--{$2|compact,condensed|}}"
+        ],
+        "description": "Table (color & size)"
+    },
+    "Table (size)": {
+        "prefix": "syTable",
+        "body": [
+            "| Column A | Column B | Column C |",
+            "|:---------|:--------:|---------:|",
+            "| Cel A1   | Cel B1   | Cel C1   |",
+            "| Cel A2   | Cel B2   | Cel C2   |",
+            "|----------|----------|----------|",
+            "| Cel A3   | Cel B3   | Cel C3   |",
+            "| Cel A4   | Cel B4   | Cel C4   |",
+            "| =========|==========|==========|",
+            "| Foot A   | Foot B   | Foot C   |",
+            "{:.table.table--${1|compact,condensed|}}"
+        ],
+        "description": "Table (size)"
+    },
+    "Timeline": {
+        "prefix": "syTimeline",
+        "body": [
+            "# Week ${1|01,02,03,04,05,06,07,08,09,10,11,12,13,14|}",
+            "- week: \"$1\"",
+            "  date: ${2:2018-01-01}",
+            "  icon: ${3|flag-o,calendar-check-o,clock-o|}",
+            "  type: ${4|default,warning,danger|}",
+            "  content: |",
+            "    {::nomarkdown}",
+            "    ${0:Lorem ipsum.}",
+            "    {:/}"
+        ],
+        "description": "Timeline"
+    },
+    "Timeline (milestone)": {
+        "prefix": "syTimeline",
+        "body": [
+            "# Week ${1|01,02,03,04,05,06,07,08,09,10,11,12,13|}",
+            "- week: \"$1\"",
+            "  date: ${2:2017-09-21}",
+            "  icon: fas fa-${3|map-marker,flag-checkered,university|}",
+            "  type: danger}",
+            "  milestone:",
+            "    uri: \"/opdracht/#milestone-${4|1,2,3,4,5,6,7,8,9,exam-oral,exam-computer,exam-written|}\"",
+            "    label: Milestone $4",
+            "    small: ${5:Lorem ipsum.}",
+            "  content: |",
+            "    ${0:Lorem ipsum.}"
+        ],
+        "description": "Timeline (milestone)"
+    },
+    "Timeline (holiday)": {
+        "prefix": "syTimeline",
+        "body": [
+            "# Week ${1|01,02,03,04,05,06,07,08,09,10,11,12,13|}",
+            "- week: \"$1\"",
+            "  date: ${1:2017-09-21}",
+            "  icon: fas fa-calendar",
+            "  type: default",
+            "  content: |",
+            "    {::nomarkdown}",
+            "    ${0|Dag van de arbeid,Hemelvaart,Opleidingsvergadering,Pinkstermaandag|}",
+            "    {:/}"
+        ],
+        "description": "Timeline (holiday period)"
+    },
+    "Timeline (holiday period)": {
+        "prefix": "syTimeline",
+        "body": [
+            "# ${1|Autumn,Christmas,Easter,Summer|}",
+            "- icon: fas fa-${2|leaf,tree,sun,plane,glass-martini|}",
+            "  type: ${3|default,success|",
+            "  content: |",
+            "    {::nomarkdown}",
+            "    ${0|Herfstperiode,Kerstperiode,Paasperiode,Zomerperiode,Time for a drink!|}",
+            "    {:/}"
+        ],
+        "description": "Timeline (holiday period)"
+    },
+    "Tree: Folders & Files, Mappen & Bestanden": {
+        "prefix": "syTree",
+        "body": [
+            "> ${1|Folders & Files,Mappen & Bestanden|}",
+            "> ---",
+            "> - ${2:level-0}     **# ${3:comment}**{:.comment}",
+            ">   - ${4:level-1}    *# ${0:comment}*{:.comment}",
+            "{:.card.card-tree}"
+        ],
+        "description": "Tree: Folders & Files, Mappen & Bestanden"
+    }
+}

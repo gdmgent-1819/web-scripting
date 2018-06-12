@@ -1,0 +1,170 @@
+$sidebar-width: 300px;
+$sidebar-small-width: 240px;
+$sidebar-mobile-height: 45px;
+$sidebar-background-color: rgba(56, 77, 88, 1);
+$sidebar-background-color-transparent: rgba(56, 77, 88, 0);
+$sidebar-color: #fff;
+$header-logo-background: color-palette('primary');
+$header-title-font-family: $secondary-font-family;
+$header-title-font-size: 1.62rem;
+$header-title-font-weight: 700;
+$scrollbar-thumb-background-color: mix(black, $primary-color, 40%);
+$scrollbar-thumb-outline-color: color-palette('primary', 'dark');
+
+.ahs-sidebar {
+  background: $sidebar-background-color;
+  bottom: 0;
+  color: $sidebar-color;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: $sidebar-width;
+  max-width: $sidebar-width;
+  & .ahs-header{
+    position: relative;
+    &__title {
+      font-family: $header-title-font-family;
+      font-size: $header-title-font-size;
+      font-weight: $header-title-font-weight;
+      opacity: .7;
+    }
+    &__courtesy-nav {
+      display: none;
+    }
+    &__logo {
+      align-self: auto;
+      background: $header-logo-background;
+      flex: 0 1 100%;
+      font-size: 1rem;
+      font-weight: 500;
+      height: 76px;
+      margin: 0;
+      order: 0;
+      > a {
+          align-content: center;
+          align-items: center;
+          color: $sidebar-color;
+          display: block;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          height: 70px;
+          justify-content: center;
+          text-decoration: none;
+          width: 100%;
+      }
+    }
+  }
+  &__body {
+    position: relative;
+    height: calc(100vh - 126px);
+    overflow-y: scroll;
+    padding: 6px 0;
+    background: #40545f;
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      border-radius: 10px;
+      width: .4em;
+      -webkit-box-shadow: none;
+    }
+    &::-webkit-scrollbar:hover {
+      background: rgba(0,0,0,.1);
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: darken($sidebar-background-color, 7%);
+      border-radius: 10px;
+      -webkit-box-shadow:  0 0 3px rgba(0, 0, 0, .5); 
+      /*outline: 1px solid $scrollbar-thumb-outline-color;*/
+    }
+  }
+  &__footer {
+    position: relative;
+    height: 40px;
+    text-align: center;
+    & .footer__link {
+      display: inline-block;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: $base-padding/4;
+      &:hover {
+        color: $primary-color;
+      }
+      i {
+        color: inherit !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ahs-sidebar {
+    width: $sidebar-small-width;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ahs-sidebar {
+    width: 100%;
+    max-width: 100%;
+    z-index: 1000;
+    height: $sidebar-mobile-height;
+    overflow: hidden;
+    -moz-transition: height .5s ease;
+    -webkit-transition: height .5s ease;
+    -o-transition: height .5s ease;
+    transition: height .5s ease;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .08);
+    &-open {
+      height: 100%;
+      & .ahs-header {
+        &__courtesy-nav i::before {
+          content: '\f00d';
+        }
+      }
+    }
+    & .ahs-header{
+      &__title {
+        font-size: $header-title-font-size * .75;
+      }
+      &__courtesy-nav {
+        border-left: solid 1px rgba(255, 255, 255, .2);
+        cursor: pointer;
+        display: block;
+        height: $sidebar-mobile-height;
+        line-height: $sidebar-mobile-height;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: $sidebar-mobile-height;
+      }
+      &__logo {
+        background: $header-logo-background;
+        font-size: .8rem;
+        font-weight: 500;
+        height: $sidebar-mobile-height;
+        margin: 0;
+        padding: $base-padding/3;
+        > a {
+          color: $sidebar-color;
+          height: auto;
+          justify-content: left;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.ahs-sidebar--topic {
+  &__body {
+    position: relative;
+    height: calc(100vh - 126px);
+    background: #40545f;
+  }
+}

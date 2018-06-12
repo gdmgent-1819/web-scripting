@@ -1,0 +1,36 @@
+{%- assign syllabus = site.data.shared.syllabi | where: 'id', site.syllabus-id | first %}
+{%- assign institute = site.data.shared.institutes | where: 'id', syllabus.programme.institute | first %}
+{%- assign department = institute.departments | where: 'id', syllabus.programme.department | first %}
+{%- capture page-title %}{{ syllabus.title.long }}{% endcapture %}
+{%- capture page-subdomain %}{{ department.name | map: syllabus.lang }}{% endcapture %}
+{%- capture page-domain %}{{ institute.name | map: syllabus.lang }}{% endcapture %}
+{%- capture page-description %}Theme voor Syllabi Arteveldehogeschool{% endcapture %}
+{%- capture page-keywords %}AHS, GDM, Jekyll, Theme, SASS{% endcapture %} {% capture page-author %}{{ department.name | map: syllabus.lang }}{% endcapture -%}
+{%- capture page-copyright %}{{ institute.name | map: syllabus.lang }}{% endcapture %}
+{%- if page.title %}{% capture page-title %}{{ page.title | strip_html }}{% endcapture %}{% endif %}
+{%- if site.subdomain %}{% capture page-subdomain %}{{ site.subdomain | strip_html }}{% endcapture %}{% endif %}
+{%- if site.domain %}{% capture page-domain %}{{ site.domain | strip_html }}{% endcapture %}{% endif %}
+{%- if page.description %}{% capture page-description %}{{ page.description | strip_html }}{% endcapture %}{% endif %}
+{%- if page.keywords %}{% capture page-keywords %}{{ page.keyword | strip_html }}{% endcapture %}{% endif %}
+{%- if site.author %}{% capture page-author %}{{ site.author | strip_html }}{% endcapture %}{% endif %}
+{%- if site.copyright %}{% capture page-copyright %}{{ site.copyright | strip_html }}{% endcapture %}{% endif %}
+<head>
+    <!-- <meta charset="utf-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Most important SEO tag -->
+    <title>{{ page-title }} | {{ page-subdomain }} | {{ page-domain }}</title>
+    <!-- Other SEO friendly tags -->
+    <meta name="description" content="{{ page-description }}">
+    <meta name="keywords" content="{{ page-keywords }}">
+    <meta name="author" content="{{ page-author }}">
+    <meta name="copyright" content="{{ page-copyright }}">
+    <meta name="HandheldFriendly" content="true">
+{% include shared/head-opengraph.html %}
+    <link rel="author" type="text/plain" href="{{ 'humans.txt' | relative_url }}">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//code.jquery.com">
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+{%- include shared/head-icons.html %}
+{% include shared/styles.html %}
+{% include shared/scripts-top.html %}
+</head>

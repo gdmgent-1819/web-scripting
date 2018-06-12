@@ -1,0 +1,37 @@
+.ahs-logo { 
+  $color: #FFF;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.5rem;
+  height: 24px;
+  margin-right: $base-margin / 2;
+  position: relative;
+  width: 48px;
+  * {
+    box-sizing: inherit;
+  }
+  &__a {
+    border-radius: 50%;
+    border-bottom-right-radius: 0;
+    border: 8px solid $color;
+    display: block;
+    height: 24px;
+    position: absolute;
+    width: 24px;
+  }
+  &__s {
+    background: $color;
+    display: block;
+    height: 8px;
+    left: 32px;
+    position: absolute;
+    transition: all 368ms ease-in 0s;
+    width: 8px;
+    &--1 {
+      top: 0;
+    }
+    &--2 {
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="grid__container">
+    <div class="grid__row">
+        {%- for cover in include.covers %}
+        <article class="cover grid__column-6">
+            <picture class="cover__picture">
+                <img class="cover__img" src="{{ cover.url }}">
+            </picture>
+            <section class="cover__content">
+                <a class="button button--primary" href="{{ cover.url }}" target="_blank">View</a>
+            </section>
+        </article>
+        {%- endfor %}
+    </div>
+</div>
+

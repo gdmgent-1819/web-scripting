@@ -1,0 +1,309 @@
+/// Syntax Highlighting
+
+// Code Colours
+$color-code: (
+  'base01': #93a1a1,
+  'base02': #586e75,
+  'base03': #B58900,
+  'bg01'  : #002b36,
+  'bg02'  : #f4f3f1,
+  'orange': #cb4b16,
+  'red'   : #dc322f,
+  'blue'  : #268bd2,
+  'cyan'  : #2aa198,
+  'green' : #859900
+);
+
+// Highlight Colours
+$base01: map-get($color-code, 'base01');
+$base02: map-get($color-code, 'base02');
+$base03: map-get($color-code, 'base03');
+$bg01  : map-get($color-code, 'bg01');
+$bg02  : map-get($color-code, 'bg02');
+$orange: map-get($color-code, 'orange');
+$red   : map-get($color-code, 'red');
+$blue  : map-get($color-code, 'blue');
+$cyan  : map-get($color-code, 'cyan');
+$green : map-get($color-code, 'green');
+
+$code-languages: (
+  apache: (
+    color: 'color-A',
+    label: 'Apache HTTP Server'
+  ),
+  bash: (
+    color: 'color-B',
+    label: 'Bash Script'
+  ),
+  bat: (
+    color: 'color-F',
+    label: 'Batch'
+  ),
+  blade: (
+    color: 'color-H',
+    label: 'Laravel Blade'
+  ),
+  code: (
+    color: 'color-A',
+    label: 'Code'
+  ),
+  conf: (
+    color: 'color-F',
+    label: 'Configuration'
+  ),
+  cs: (
+    color: 'color-F',
+    label: 'C#'
+  ),
+  css: (
+    color: 'color-C',
+    label: 'CSS'
+  ),
+  emmet: (
+    color: 'color-A',
+    label: 'Emmet'
+  ),
+  gherkin: (
+    color: 'color-E',
+    label: 'Gherkin'
+  ),
+  hbs: (
+    color: 'color-B',
+    label: 'Handlebars'
+  ),
+  html: (
+    color: 'color-B',
+    label: 'HTML'
+  ),
+  ini: (
+    color: 'color-A',
+    label: 'Ini'
+  ),
+  inky: (
+    color: 'color-B',
+    label: 'Inky'
+  ),
+  json: (
+    color: 'color-A',
+    label: 'JSON'
+  ),
+  js: (
+    color: 'color-D',
+    label: 'JavaScript'
+  ),
+  liquid: (
+    color: 'color-F',
+    label: 'Liquid'
+  ),
+  md: (
+    color: 'color-A',
+    label: 'Markdown'
+  ),
+  nginx: (
+    color: 'color-A',
+    label: 'NGINX'
+  ),
+  php: (
+    color: 'color-G',
+    label: 'PHP'
+  ),
+  po: (
+    color: 'color-A',
+    label: 'PO'
+  ),
+  py: (
+    color: 'color-D',
+    label: 'Python'
+  ),
+  rb: (
+    color: 'color-B',
+    label: 'Ruby'
+  ),
+  scss: (
+    color: 'color-H',
+    label: 'SCSS'
+  ),
+  sh: (
+    color: 'color-A',
+    label: 'Shell Script'
+  ),
+  sql: (
+    color: 'color-F',
+    label: 'SQL'
+  ),
+  swift: (
+    color: 'color-C',
+    label: 'Swift'
+   ),
+  ts: (
+    color: 'color-F',
+    label: 'TypeScript'
+  ),
+  twig: (
+    color: 'color-E',
+    label: 'Twig'
+  ),
+  vue: (
+    color: 'color-E',
+    label: 'Vue'
+  ),
+  xml: (
+    color: 'color-C',
+    label: 'XML'
+  ),
+  yml: (
+    color: 'color-D',
+    label: 'YAML'
+  ),
+  // Command Line
+  cmd: (
+    color: 'color-F',
+    label: 'Windows Command'
+  ),
+  console: (
+    color: 'color-B',
+    label: 'Linux Console'
+  ),
+  posh: (
+    color: 'color-F',
+    label: 'PowerShell'
+  ),
+  terminal: (
+    color: 'color-A',
+    label: 'macOS Terminal'
+  )
+);
+
+:not(pre) > code {
+  background-color: hsla(0, 0%, 40%, 0.25);
+  border-radius: .25rem;
+  color: #333;
+  font-family: $font-code;
+  font-size: 80%;
+  padding: .05rem .2rem;
+}
+
+code.highlighter-rouge {
+  letter-spacing: 1px;
+  // Comment
+  &.c {
+    color: $base02;
+  }
+  // Default
+  &.d {
+    font-weight: bold;
+  }
+  // Doctype
+  &.dt {
+    color: $green;
+  }
+  // Element
+  &.e {
+    color: $blue;
+  }
+  &.f {
+    color: $cyan;
+  }
+  // Argument/Attribute/Property/Parameter
+  &.a,
+  &.p {
+    color: $orange;
+  }
+  // Keyword
+  &.k {
+    color: $blue;
+  }
+  // Selector
+  &.s {
+    color: $green;
+  }
+  // Value
+  &.v {
+    color: $base01;
+    font-style: italic;
+  }
+}
+
+figure.highlight {
+  @mixin label($background-color: map_get($code-color-palette, color-G), $color: white, $text: 'Code') {
+    &::after{
+      background-color: $background-color;
+      border-radius: 0 0 0 .3rem;
+      color: $color;
+      content: $text;
+    }
+  }
+  font-size: .75rem;
+  letter-spacing: .25px;
+  margin: 2rem 0;
+  overflow: auto;
+  position: relative;
+  &::after,
+  &::before {
+    height: 2rem;
+    line-height: 2rem;
+    opacity: .5;
+    position: absolute;
+  }
+  &::after {
+    display: inline-block;
+    font-family: $font-sans-serif;
+    padding: 0 .5rem 0 .7rem;
+    right: 0;
+    top: 0;
+  }
+  &::before {
+    content: attr(data-file);
+    font-family: $font-code;
+    padding-left: 1rem;
+  }
+  &[data-file] {
+    > pre {
+      padding: 2rem 0 0;
+    }
+  }
+  &.language- {
+    @each $language-key, $language-value in $code-languages {
+      &#{$language-key} {
+        @include label(
+          $background-color: map-get($code-color-palette, map-get($language-value, color)),
+          $text: map-get($language-value, label)
+        );
+      }
+    }
+  }
+  code {
+    font-family: $font-code;
+    span.file:first-child {
+      background-color: $base03;
+      border-radius: 0 0 .3rem;
+      color: white;
+      height: 2rem;
+      left: 0;
+      line-height: 2rem;
+      padding: 0 .7rem 0 .5rem;
+      position: absolute;
+      top: 0;
+    }
+  }
+  pre {
+    font-family: $font-code;
+    background-color: inherit;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    line-height: 1.5;
+    margin: 0;
+    overflow: auto;
+    padding: 1rem;
+  }
+  table {
+    tr > *:first-child {
+      width: 1px;
+      white-space: nowrap;
+    }
+  }
+  .lineno {
+    background-color: rgba(255, 255, 255 , .5);
+  }
+}

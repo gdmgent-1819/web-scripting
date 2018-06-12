@@ -1,0 +1,26 @@
+<section class="c-timeline">
+{%- for entry in include.timeline %}
+    <article class="c-timeline__entry c-timeline__entry--{% if entry.type %}{{ entry.type }}{% else %}info{% endif %}"{% if entry.date %} data-date="{{ entry.date }}"{% endif %}{% if entry.week %} data-week="{{ entry.week }}"{% endif %}>
+    {%- if entry.icon %}
+        <i class="c-timeline__icon {{ entry.icon }}"></i>
+    {%- endif %}
+    {%- if entry.chamilo or entry.milestone or entry.content %}
+        <div class="c-timeline__content">
+        {%- if entry.chamilo %}
+            <h2><a href="https://chamilo.arteveldehs.be/index.php?application=weblcms&course={{ site.data.syllabus.course.chamilo_id }}&tool=document&go=course_viewer">Uurrooster</a> <small>{{ article.chamilo }} bekend op Chamilo</small></h2>
+        {%- endif %}
+        {%- if entry.milestone %}
+            {%- if entry.milestone.uri %}
+            <h2><a href="{{ entry.milestone.uri | relative_url }}">{{ entry.milestone.label }}</a><br><small>{{ entry.milestone.small }}</small></h2>
+            {%- else %}
+            <h2>{{ entry.milestone.label }}<br><small>{{ entry.milestone.small }}</small></h2>
+            {%- endif %}
+        {%- endif %}
+        {%- if entry.content %}
+            {{ entry.content | markdownify }}
+        {%- endif %}
+        </div>
+    {%- endif %}
+    </article>
+{%- endfor %}
+</section>

@@ -1,0 +1,28 @@
+.breadcrumb {
+  $breadcrumb-link-color: $ahs-dark-grey;
+  $breadcrumb-link-hover-color: color-palette('primary');
+  color: $breadcrumb-link-color;
+  & i {
+    padding-left: $base-padding / 3;
+    padding-right: $base-padding / 3;
+  }
+  & a {
+    border-bottom: solid 1px mix(white, $breadcrumb-link-color, 70%);
+    color: $breadcrumb-link-color;
+    text-decoration: none;
+    &:hover {
+      color: $breadcrumb-link-hover-color;
+    }
+  }
+  > span {
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 1420px) {
+  .breadcrumb {
+    border-radius: 0;
+    margin-top: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<example>
+    <element attribute="This is an attribute">This is an element</element>
+</example>

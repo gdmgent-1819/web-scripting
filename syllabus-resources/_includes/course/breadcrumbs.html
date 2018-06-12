@@ -1,0 +1,43 @@
+<div class="breadcrumb">
+    <a href="{{ '/' | relative_url }}" itemprop="url" title="{{ site.description }}"><span itemprop="title">{{ site.title }}</span></a>
+{%- if include.page %}
+    {%- assign page_path = page.path | split: '/' %}
+    {%- capture page_path_folder %}{{ page_path[0] }}/{{ page_path[1] }}/{% endcapture %} 
+    {%- if page_path.size < 3 %}
+        <i class="fas fa-angle-right"></i>
+        <span itemprop="title">{{ page.title }}</span>
+    {%- else %}    
+        {%- capture page_path_filename %}{{ page_path[2] }}{% endcapture %}
+        {%- assign page_level = page_path_filename | split: '__' | first | split: '-' %}
+        {%- if page_level and page_level.size == 3 %}
+            {%- assign page_filename_array = page_path_filename | split: '__' %}
+            {%- if page_level[2] != '0' %} 
+            <i class="fa fa-angle-right"></i>{% capture page_level1_path %}{{ page_path_folder }}{{ page_level[0] }}-0-0__{{ page_filename_array[1] }}.md{% endcapture %} {% capture wherevalue %}item.path contains '{{ page_level1_path }}'{% endcapture %}
+            {%- assign pagesContents = site.pages | where_exp:"item", wherevalue %}
+            <a href="{{ pagesContents[0].url | relative_url }}" itemprop="url" title="{{ pagesContents[0].title_long }}">
+                <span itemprop="title">{{ pagesContents[0].title }}</span>
+            </a>
+            <i class="fa fa-angle-right"></i>
+            {%- capture page_level2_path %}{{ page_path_folder }}{{ page_level[0] }}-{{ page_level[1] }}-0__{{ page_filename_array[1] }}__{{ page_filename_array[2] }}.md{% endcapture %} {% capture wherevalue %}item.path
+            contains '{{ page_level2_path }}'{% endcapture %} {% assign pagesContents = site.pages | where_exp:"item", wherevalue %}
+            <a href="{{ pagesContents[0].url | relative_url }}" itemprop="url" title="{{ pagesContents[0].title_long }}">
+            <span itemprop="title">{{ pagesContents[0].title }}</span>
+            </a>
+            {%- elsif page_level[1] != '0' and page_level[2] == '0' %}
+            <i class="fa fa-angle-right"></i>
+            {%- capture page_level1_path %}{{ page_path_folder }}{{ page_level[0] }}-0-0__{{ page_filename_array[1] }}.md{% endcapture %} {% capture wherevalue %}item.path contains '{{ page_level1_path }}'{% endcapture %}
+            {%- assign pagesContents = site.pages | where_exp:"item", wherevalue %}
+            <a href="{{ pagesContents[0].url | relative_url }}" itemprop="url" title="{{ pagesContents[0].title_long }}">
+            <span itemprop="title">{{ pagesContents[0].title }}</span>
+            </a>
+            {%- endif %} 
+            <i class="fas fa-angle-right"></i>
+            {%- assign p = include.page %}
+            <span itemprop="title">{{ p.title }}</span>
+        {% else %}
+            <i class="fas fa-angle-right"></i>
+            <span itemprop="title">{{ page.title }}</span>
+        {% endif %}
+    {% endif %}
+{%- endif %}
+</div>

@@ -1,0 +1,16 @@
+.badge {
+  border-radius: .25em;
+  color: #FFF;
+  font-size: 75%;
+  font-style: normal;
+  font-weight: 700;
+  padding: .25em .4em;
+  @each $key, $value in $color-palettes {
+    &--#{$key} {
+      background-color: map-get($value, 'base')
+    }
+  }
+  &--pill {
+    border-radius: 999rem;
+  }
+}

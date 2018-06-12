@@ -1,0 +1,48 @@
+---
+layout: shared/base
+styles:
+  cdn : []
+  libs: []
+  base:
+    - syllabus-resources/css/course.css
+scripts:
+  cdn-top    :
+    - https://d3js.org/d3.v5.min.js
+  cdn-bottom :
+    - https://code.jquery.com/jquery-3.3.1.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/locale/nl.js
+    - https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/locale/nl-be.js
+  libs-bottom:
+    - syllabus-resources/vendor/lodash/lodash.js
+    - syllabus-resources/vendor/lunr/lunr.min.js
+  base-bottom:
+    - syllabus-resources/js/utilities.js
+    - syllabus-resources/js/course.js
+    - syllabus-resources/js/course.pagemap.js
+    - syllabus-resources/js/course.search.js
+    - syllabus-resources/js/course.syntax-highlight.js
+---
+{%- assign syllabus = site.data.shared.syllabi | where: 'id', site.syllabus-id | first -%}
+{% include course/sidebar.html %}
+<main class="ahs-main">
+    <header class="ahs-main__header">
+        <div class="ahs-main__topbar">
+            {% include course/breadcrumbs.html page=page %}
+            <div class="reading">
+                {%- assign word_count = content | number_of_words %}
+                {%- capture read_duration %}{{ word_count | divided_by: site.words_per_minute }}{% endcapture %}
+                <i class="fas fa-clock"></i>
+                <span class="reading__time">{{ read_duration }} min</span>
+                <span class="reading__word-count">({{ word_count }} woorden)</span>
+            </div>
+        </div>
+        <h1 class="ahs-main__heading">{% if page.title_long %}{{ page.title_long }}{% elsif page.title %}{{ page.title }}{% else %}Syllabus{% endif %}</h1>
+    </header>
+    <div class="ahs-main__body">
+        <div class="pagemap"></div>
+        {{ content }}
+    </div>
+{% include shared/footer.html %}
+</main>
+{% include shared/scroll-to-top.html%}

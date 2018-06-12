@@ -1,0 +1,32 @@
+    <script>
+        window.baseurl = '{{ site.baseurl }}';
+    </script>
+{%- if layout.scripts.cdn-top and layout.scripts.cdn-top != empty %}
+    <!-- CDN Scripts -->
+    {%- for script-src in layout.scripts.cdn-top %}
+    <script crossorigin="anonymous" src="{{ script-src }}"></script>
+    {%- endfor %}
+{%- endif %}
+{%- if layout.scripts.libs-top and layout.scripts.libs-top != empty %}
+    <!-- Libraries Scripts -->
+    {%- for script-src in layout.scripts.libs-top %}
+    <script src="{{ script-src | relative_url }}"></script>
+    {%- endfor %}
+{%- endif %}
+{%- if layout.scripts.base-top and layout.scripts.base-top != empty %}
+    <!-- Template Scripts -->
+    {%- for script-src in layout.scripts.base-top %}
+    <script src="{{ script-src | relative_url }}"></script>
+    {%- endfor %}
+{%- endif %}
+{%- if page.scripts.top and page.scripts.top != empty %}
+    <!-- Page Scripts -->
+    {%- for script-src in page.scripts.top %}
+    <script src="{{ script-src | relative_url }}"></script>
+    {%- endfor %}
+{%- endif %}
+{%- if (page.mathjax == 'enabled') %}
+    {% include shared/scripts-mathjax.html %}
+{%- endif %}
+    <!-- Modernizr -->
+    <script src="{{ 'syllabus-resources/vendor/modernizr/modernizr.min.js' | relative_url }}"></script>

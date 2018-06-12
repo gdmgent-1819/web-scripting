@@ -1,0 +1,256 @@
+$blocks: (
+  android: (
+    color: 'default',
+    icon : '\f17b',     // fab fa-android
+    font : 'Brands'
+  ),
+  app: (
+    color: 'default',
+    icon : '\f2d0'      // fas fa-window-maximize
+  ),
+  apple: (
+    color: 'default',
+    icon : '\f179',     // fab fa-apple
+    font : 'Brands'
+  ),
+  book: (
+    color: 'info',
+    icon : '\f02d'      // fas fa-book
+  ),
+  chrome: (
+    color: 'default',
+    icon : '\f268',     // fab fa-chrome
+    font : 'Brands'
+  ),
+  definition: (
+    color: 'info',
+    icon :'\f3a5'       // fas fa-gem
+  ),
+  drupal: (
+    color: 'default',
+    icon : '\f1a9',      // fab fa-drupal
+    font : 'Brands'
+  ),
+  edge: (
+    color: 'default',
+    icon : '\f282',     // fab fa-edge
+    font : 'Brands'
+  ),
+  exam-computer: (
+    color: 'danger',
+    icon : '\f109'      // fas fa-laptop
+  ),
+  exam-oral: (
+    color: 'danger',
+    icon : '\f086'      // fas fa-comments
+  ),
+  exam-written: (
+    color: 'danger',
+    icon : '\f044'      // fas fa-pencil-square
+  ),
+  example: (
+    color: 'success',
+    icon : '\f085',     // fas fa-cogs
+  ),
+  firefox: (
+    color: 'default',
+    icon : '\f269',     // fab fa-firefox
+    font : 'Brands'
+  ),
+  github: (
+    color: 'default',
+    icon : '\f09b',     // fab fa-github
+    font : 'Brands'
+  ),
+  joomla: (
+    color: 'default',
+    icon : '\f1aa',     // fab fa-joomla
+    font : 'Brands'
+  ),
+  know: (
+    color: 'default',
+    icon : '\f059'      // fas fa-question-circle
+  ),
+  link: (
+    color: 'info',
+    icon : '\f02e'      // fas fa-bookmark
+  ),
+  linux: (
+    color: 'default',
+    icon : '\f17c',     // fab fa-linux
+    font : 'Brands'
+  ),
+  milestone: (
+    color: 'danger',
+    icon : '\f3c5'      // fas fa-map-marker-alt
+  ),
+  milestone--end: (
+    color: 'danger',
+    icon : '\f11e'      // fas fa-flag-checkered
+  ),
+  milestone--start: (
+    color: 'danger',
+    icon : '\f024'      // fas fa-flag
+  ),
+  opera: (
+    color: 'default',
+    icon : '\f26a',     // fab fa-opera
+    font : 'Brands'
+  ),
+  quote: (
+    color: 'info',
+    icon : '\f10d'      // fas fa-quote-left
+  ),
+  remark: (
+    color: 'warning',
+    icon : '\f06a'      // fas fa-exclamation-circle
+  ),
+  safari: (
+    color: 'default',
+    icon : '\f267',     // fab fa-safari
+    font : 'Brands'
+  ),
+  source: (
+    color: 'default',
+    icon : '\f02d'      // fas fa-book
+  ),
+  task: (
+    color: 'warning',
+    icon : '\f0b1'      // fas fa-briefcase
+  ),
+  thumbs-down: (
+    color: 'danger',
+    icon : '\f165'      // fas fa-thumbs-down
+  ),
+  thumbs-up: (
+    color: 'success',
+    icon : '\f164'      // fas fa-thumbs-up
+  ),
+  tip: (
+    color: 'info',
+    icon : '\f0eb'      // fas fa-lightbulb
+  ),
+  tree: (
+    color: 'default',
+    icon : '\f07c'      // fas fa-folder-open
+  ),
+  video: (
+    color: 'info',
+    icon : '\f26c',     // fas fa-tv
+  ),
+  warning: (
+    color: 'danger',
+    icon : '\f071'      // fas fa-exclamation-triangle
+  ),
+  windows: (
+    color: 'default',
+    icon : '\f17a',     // fab fa-windows
+    font : 'Brands'
+  ),
+  wordpress: (
+    color: 'default',
+    icon : '\f19a',     // fab fa-wordpress
+    font : 'Brands'
+  ),
+);
+
+blockquote,
+.mjx-chtml.MJXc-display { // MathJax
+  border-left: 4px solid color-palette('default', 'light');
+  margin: 0 0 2rem;
+  padding: 0 1rem;
+}
+
+.mjx-chtml.MJXc-display { // MathJax
+  padding: 1rem;
+  background-color: color-palette('default', 'light');
+  border-left: 4px solid color-palette('default', 'base');
+}
+blockquote {
+  ul:last-child {
+    padding-bottom: 1rem;
+  }
+}
+
+.quote {
+  p:first-of-type {
+    font-size: 2rem;
+    padding-left: 1rem;
+    position: relative;
+    &::after {
+      content: close-quote;
+    }
+    &::before {
+      content: open-quote;
+      position: absolute;
+      left: 0;
+    }
+  }
+  p:last-of-type {
+    &::before {
+      content: '\2013';
+      display: inline-block;
+      margin-right: $base-margin / 3;
+    }
+  }
+}
+.card-quote {
+  p:first-of-type {
+    font-size: 1.5rem;
+    position: relative;
+    &::after {
+      content: close-quote;
+    }
+    &::before {
+      content: open-quote;
+      position: absolute;
+      left: -.75rem;
+    }
+  }
+  p:last-of-type {
+    &::before {
+      content: '\2013';
+      display: inline-block;
+      margin-right: $base-margin / 3;
+    }
+  }
+}
+
+.card {
+  padding-left: 2.75rem;
+  h2:first-of-type {
+    font-size: 1.25rem;
+    font-weight: bold;
+    left: -1.75rem;
+    position: relative;
+    &::before {
+      content: '\f005';
+      display: inline-block;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      width: 1.75rem;
+    }
+  }
+  &.card- {
+    @each $block, $settings in $blocks {
+      &#{$block} {
+        $color: color-palette(map-get($settings, color));
+        $color-light: color-palette(map-get($settings, color), light);
+        $icon: map-get($settings, icon);
+        background-color: $color-light;
+        border-left-color: $color;
+        h2 {
+          color: $color;
+          line-height: 1em;
+          &:first-of-type::before {
+            content: $icon;
+            @if map-has-key($settings, font) {
+              $family: map-get($settings, font);
+              font-family: "Font Awesome 5 #{$family}";
+            }
+          }
+        }
+      }
+    }
+  }
+}

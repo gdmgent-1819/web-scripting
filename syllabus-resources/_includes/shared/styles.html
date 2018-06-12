@@ -1,0 +1,29 @@
+    <link rel="stylesheet" href="{{ 'syllabus-resources/assets/fonts/fontello/css/fontello.css' | relative_url }}">
+{%- if layout.styles.cdn and layout.styles.cdn != empty %}
+
+    <!-- CDN Styles -->
+    {%- for style_href in layout.styles.cdn %}
+    <link rel="stylesheet" href="{{ style_href }}">
+    {%- endfor %}
+{%- endif %}
+{%- if layout.styles.libs and layout.styles.libs != empty %}
+
+    <!-- Libraries Styles -->
+    {%- for style_href in layout.styles.libs %}
+    <link rel="stylesheet" href="{{ style_href | relative_url }}">
+    {%- endfor %}
+{%- endif %}
+{%- if layout.styles.base and layout.styles.base != empty %}
+
+    <!-- Template Styles -->
+    {%- for style_href in layout.styles.base %}
+    <link rel="stylesheet" href="{{ style_href | relative_url }}">
+    {%- endfor %}
+{%- endif %}
+{%- if page.styles and page.styles != empty %}
+
+    <!-- Page Styles -->
+    {%- for style_href in page.styles %}
+    <link rel="stylesheet" href="{{ style_href | relative_url }}">
+    {%- endfor %}
+{%- endif %}

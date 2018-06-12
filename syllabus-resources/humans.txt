@@ -1,0 +1,45 @@
+---
+permalink: humans.txt
+---
+{% assign syllabus = site.data.shared.syllabi | where: 'id', site.syllabus-id | first %}{% assign institute = site.data.shared.institutes | where: 'id', syllabus.programme.institute | first %}{% assign department = institute.departments | where: 'id', syllabus.programme.department | first %}{% assign author-owner = site.data.shared.authors | where: 'id', syllabus.authors[0] | first %}/* TEAM */{% for author in syllabus.authors %}{% assign a = site.data.shared.authors | where: 'id', author | first %}
+    {{ a.title.en | capitalize }}: {{ a.name.full }}
+    Contact: {{ a.contact.email | replace: '@', ' [at] ' }}
+    Site: {{ a.contact.website }}
+    From: Ghent, Belgium
+{% endfor %}
+/* SCHOOL */
+    Institute: {{ institute.name | map: syllabus.lang }}
+    Department: {{ department.name | map: syllabus.lang }}
+    Site: {{ department.contact.website }}
+    Twitter: {{ department.contact.twitter }}
+    From: Ghent, Belgium
+
+/* SITE */
+    Last change: {{ site.time | date: "%Y/%m/%d" }}
+
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *                                                                           *
+    *                                                                           *
+    *                                                                           *
+    *                        aaaAAaaa            HHHHHH                         *
+    *                     aaAAAAAAAAAAaa         HHHHHH                         *
+    *                    aAAAAAAAAAAAAAAa        HHHHHH                         *
+    *                   aAAAAAAAAAAAAAAAAa       HHHHHH                         *
+    *                   aAAAAAa    aAAAAAA                                      *
+    *                   AAAAAa      AAAAAA                                      *
+    *                   AAAAAa      AAAAAA                                      *
+    *                   aAAAAAa     AAAAAA                                      *
+    *                    aAAAAAAaaaaAAAAAA       HHHHHH                         *
+    *                     aAAAAAAAAAAAAAAA       HHHHHH                         *
+    *                      aAAAAAAAAAAAAAA       HHHHHH                         *
+    *                         aaAAAAAAAAAA       HHHHHH                         *
+    *                                                                           *
+    *                                                                           *
+    *                                                                           *
+    *      a r t e v e l d e  u n i v e r s i t y  c o l l e g e  g h e n t     *
+    *                                                                           *
+    *                                                                           *
+    *                                MEMBER OF GHENT UNIVERSITY ASSOCIATION     *
+    *                                                                           *
+    *                                                                           *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

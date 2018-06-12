@@ -1,0 +1,79 @@
+// a[class^="button-"],
+// button[class^="button-"],
+input[class^="button-"] {
+  --color: #{color-palette('default')};
+  --color-mid-dark: #{color-palette('default', 'mid-dark')};
+  border: none;
+  border-radius: $base-border-radius;
+  background-color: $ahs-dark-grey;
+  color: white;
+  display: inline-block;
+  padding: $base-padding/5 $base-padding/2;
+  text-decoration: none;
+  &:hover {
+    background-color: mix(black, $ahs-dark-grey, 20%);
+    color: white;
+  }
+
+  // @each $key, $value in $color-palettes {
+  //   &.button-#{$key} {
+  //     --color: #{color-palette($key)};
+  //     --color-mid-dark: #{color-palette($key, 'mid-dark')};
+  //     background-color: var(--color);
+  //     &:hover {
+  //       background-color: var(--color-mid-dark);
+  //       color: white;
+  //     }
+  //   }
+  //   &.button-outline-#{$key} {
+  //     background-color: transparent;
+  //     border-color: color-palette($key);
+  //     border-style: solid;
+  //     border-width: 2px;
+  //     color: color-palette($key, 'mid-dark');
+  //     &:hover {
+  //       background-color: color-palette($key);
+  //       color: white;
+  //     }
+  //   }
+  // }
+}
+
+.button {
+  --color: #{color-palette('default')};
+  --color-mid-dark: #{color-palette('default', 'mid-dark')};
+  background-color: var(--color);
+  border: 1px solid var(--color);
+  border-radius: $base-border-radius;
+  color: #FFF;
+  cursor: pointer;
+  padding: $base-padding / 5 $base-padding / 2;
+  &:hover {
+    background-color: var(--color-mid-dark);
+    border-color: var(--color-mid-dark);
+    color: #FFF;
+    text-decoration: none;
+  }
+  @each $key, $value in $color-palettes {
+    &.button--#{$key} {
+      --color: #{color-palette($key)};
+      --color-mid-dark: #{color-palette($key, 'mid-dark')};
+    }
+  }
+  &.button--outline {
+    background-color: transparent;
+    color: var(--color);
+    &:hover {
+      background-color: var(--color-mid-dark);
+      border-color: var(--color-mid-dark);
+      color: #FFF;
+    }
+  }
+}
+
+#scroll-to-top {
+  bottom: $base_margin;
+  display: none;
+  position: fixed; 
+  right: $base_margin;
+}

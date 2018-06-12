@@ -1,0 +1,107 @@
+.ahs-header__search {
+    $search-background-color: color-palette('primary');
+    $search-form-background-color: mix(black, $primary-color, 10%);
+    $search-form-border-color: mix(white, $primary-color, 10%);
+    $search-form-text-color: color-palette('primary', 'mid-light');
+    $search-form-text-focus-color: color-palette('primary', 'light');
+    $search-form-input-focus-outline-color: color-palette('primary', 'dark');
+    background: $search-background-color;
+    padding-bottom: $base-padding/2;
+    position: relative;
+    & > form {
+        background: $search-form-background-color;
+        border: 0 solid $search-form-border-color;
+        border-radius: $base-border-radius;
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, .08);
+        color: $search-form-text-color;
+        display: block;
+        height: 38px;
+        margin: 0 $base-margin/2 0 $base-margin/2;
+        position: relative;
+        & > label {
+            color: rgba(255, 255, 255, .8);
+            font-size: 1rem;
+            left: 10px;
+            position: absolute;
+            text-shadow: 1px 2px rgba(0, 0, 0, .08);
+            top: 6px;
+        }
+        & > input {
+            background: transparent;
+            border: none;
+            border-radius: .1875rem;
+            box-sizing: border-box;
+            color: $search-form-text-color;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 400;
+            height: 38px;
+            margin: 0;
+            padding: 0 16px 0 38px;
+            transition: border-color;
+            width: 100%;
+            &:focus {
+                color: $search-form-text-focus-color;
+                outline: $search-form-input-focus-outline-color;
+                &::placeholder {
+                    color: $search-form-text-focus-color;
+                }
+                &::-webkit-input-placeholder {
+                    color: $search-form-text-focus-color;
+                }
+                &::-moz-placeholder {
+                    color: $search-form-text-focus-color;
+                }
+                &:-ms-input-placeholder {
+                    color: $search-form-text-focus-color;
+                }
+            }
+            &::placeholder {
+                text-overflow: ellipsis !important;
+                color: $search-form-text-color;
+            }
+            &::-webkit-input-placeholder {
+                text-overflow: ellipsis !important;
+                color: $search-form-text-color;
+            }
+            &::-moz-placeholder {
+                text-overflow: ellipsis;
+                color: $search-form-text-color;
+            }
+            &:-ms-input-placeholder {
+                text-overflow: ellipsis;
+                color: $search-form-text-color;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ahs-header__search {
+        background: mix(black, $primary-color, 20%);
+        padding-bottom: $base-padding/3;
+        padding-top: $base-padding/3;
+        & > form {
+            background: mix(black, $primary-color, 30%);
+        }
+    }
+}
+
+.search-results {
+    &__item {
+        border: solid 1px #CCC;
+        border-radius: $base-border-radius;
+        color: $base-color;
+        display:block;
+        margin-bottom: $base-margin;
+        padding: $base-padding/3 $base-padding/2;
+        text-decoration: none;
+        &:hover {
+            background: #EEE;
+            border-color: #BBB;
+        }
+    }
+    &__title {
+        margin-top: 0;
+    }
+}

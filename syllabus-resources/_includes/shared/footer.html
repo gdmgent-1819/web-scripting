@@ -1,0 +1,15 @@
+{%- assign syllabus = site.data.shared.syllabi | where: 'id', site.syllabus-id | first %}
+{%- assign institute = site.data.shared.institutes | where: 'id', syllabus.programme.institute | first %}
+{%- assign department = institute.departments | where: 'id', syllabus.programme.department | first %}
+    <footer class="body-footer">
+        {%- capture copy %}&copy; {{ syllabus.academic-year }} {{ department.name | map: syllabus.lang }}, {{ institute.name | map: syllabus.lang }}{% endcapture %}
+        <div class="body-footer__copy" title="{{ copy }}">{{ copy }}</div>
+        <div class="body-footer__update">{% if syllabus.lang == 'nl' %}Geüpdatet op{% else %}Updated on{% endif %} <span class="badge badge--default">{{ site.time | date: "%Y-%m-%d" }}</span></div>
+        <div class="reading hidden">
+            {%- assign word_count = content | number_of_words %}
+            {%- capture read_duration %}{{ word_count | divided_by: site.words_per_minute }}{% endcapture %}
+            <i class="fas fa-clock"></i>
+            <span class="reading__time">{{ read_duration }} min</span>
+            <span class="reading__word-count">({{ word_count }} woorden)</span>
+        </div>
+    </footer>

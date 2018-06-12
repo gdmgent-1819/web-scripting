@@ -1,0 +1,71 @@
+{%- assign pagesGeneral  = site.pages | where_exp: "item", "item.path contains 'pages/general/'" %}
+{%- assign pagesContents = site.pages | where_exp: "item", "item.path contains 'pages/content/'" %}
+<nav class="ahs-sitemap">
+    <ul>
+        <li>
+            <span class="ahs-sitemap__item"><span class="course_nr"></span>Algemeen</span>
+            <ul>
+{%- for pageGeneral in pagesGeneral %}
+                <li class="ahs-sitemap__item">
+                    <a href="{{ pageGeneral.url | absolute_url }}" title="{{ pageGeneral.title_long }}"><span class="course_nr"></span>{{ pageGeneral.title }}</a>
+                </li>
+{%- endfor %}
+            </ul>
+        </li>
+        <li>
+            <span class="ahs-sitemap__item"><span class="course_nr"></span>Inhoud</span>
+            <ul>
+{%- for page in pagesContents %}
+    {%- assign page_level0 = page.path | remove: 'pages/contents/' | split: '_' | first | split: '-' %}
+    {%- if page_level0[1] == '0' and page_level0[2] == '0' %}
+                <li class="ahs-sitemap__item">
+                    <a href="{{ page.url | absolute_url }}" title="{{ page.title_long }}"><span class="course_nr"></span>{{ page.title }}</a>
+        {%- assign pageContentsLevel1 = pagesContents %}
+        {%- assign pageContentsLevel1UlGenerated = false %}
+        {%- for pagel1 in pageContentsLevel1 %}
+            {%- assign page_level1 = pagel1.path | remove: 'pages/contents/' | split: '_' | first | split: '-' %}
+            {%- if page_level1[0] == page_level0[0] and page_level1[1] != '0' and page_level1[2] == '0' %}
+                {%- if pageContentsLevel1UlGenerated == false %}
+                    <ul>
+                    {%- assign pageContentsLevel1UlGenerated = true %}
+                {%- endif %}
+                        <li class="ahs-sitemap__item">
+                            <a href="{{ pagel1.url | absolute_url }}" title="{{ pagel1.title_long }}"><span class="course_nr"></span>{{ pagel1.title }}</a>
+                {%- assign pageContentsLevel2 = pagesContents %}
+                {%- assign pageContentsLevel2UlGenerated = false %}
+                {%- for pagel2 in pageContentsLevel2 %}
+                    {%- assign page_level2 = pagel2.path | remove: 'pages/contents/' | split: '_' | first | split: '-' %}
+                    {%- if page_level2[0] == page_level0[0] and page_level2[1] == page_level1[1] and page_level2[2] != '0' %}
+                        {%- if pageContentsLevel2UlGenerated == false %}
+                            <ul>
+                            {%- assign pageContentsLevel2UlGenerated = true %}
+                        {%- endif %}
+                                <li class="ahs-sitemap__item">
+                                    <a href="{{ pagel2.url | absolute_url }}" title="{{ pagel2.title_long }}"><span class="course_nr"></span>{{ pagel2.title }}</a>
+                                </li>
+                    {%- endif %}
+                {%- endfor %}
+                {%- if pageContentsLevel2UlGenerated == true %}
+                            </ul>
+                {%- endif %}
+                        </li>
+            {%- endif %}
+        {%- endfor %}
+        {%- if pageContentsLevel1UlGenerated == true %}
+                    </ul>
+        {%- endif %}
+                </li>
+    {%- endif %}
+{%- endfor %}
+            </ul>
+        </li>
+        <!--
+        <li>
+           <a href="{{ '/faq/' | absolute_url }}" title="Frequently Asked Questions"><span class="course_nr"></span>FAQ</a>
+        </li>
+        <li>
+           <a href="{{ '/nieuws/' | absolute_url }}" title="Nieuws"><span class="course_nr"></span>Nieuws</a>
+        </li>
+        -->
+    </ul>
+</nav>

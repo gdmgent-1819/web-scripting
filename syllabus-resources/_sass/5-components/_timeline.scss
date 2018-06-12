@@ -1,0 +1,184 @@
+/// Timeline
+
+@at-root {
+  // Mixins
+  @mixin arrow($direction, $color, $width) {
+    border-#{$direction}: none;
+    #{$direction}: -1 * $width;
+    @if left==$direction {
+      border-right-color: var(--#{$color});
+    } @else if right==$direction {
+      border-left-color: var(--#{$color});
+    } @else {
+      @warn "Direction must be `right` or `left`; currently: `#{$direction}`.";
+    }
+  }
+  // Variables
+  $break-point: 60rem;
+  $center-line: 16rem;
+  $diameter-waypoint: 1rem;
+  $diameter-icon: 3.5 * $diameter-waypoint;
+  $gutter: 2.5rem;
+  $line-width: 4/16 * 1rem;
+  $arrow-width: 3 * $line-width;
+  .c-timeline {
+    --color: #{color-palette(default)};
+    --color-light: #{color-palette(default, light)};
+    position: relative;
+    &::before {
+      // Center line
+      background-color: var(--color);
+      content: "";
+      height: 100%;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      width: $line-width;
+      @media screen and (max-width: $break-point) {
+        left: $center-line;
+        right: auto;
+      }
+    }
+    &__content {
+      background-color: var(--color-light);
+      border: $line-width solid var(--color);
+      border-bottom: 0;
+      border-top: 0;
+      box-sizing: border-box;
+      min-height: $diameter-icon - 2 * $line-width;
+      padding: .5rem 1rem;
+      position: relative;
+      &::after,
+      &::before {
+        border: $arrow-width solid transparent;
+        content: "";
+        position: absolute;
+        top: .8125rem;
+      }
+      :nth-child(even) > & {
+        border-right-color: transparent;
+        &::after {
+          @include arrow(left, color-light, 2/3 * 1rem);
+        }
+        &::before {
+          @include arrow(left, color, 1rem);
+        }
+      }
+      :nth-child(odd) > & {
+        @media screen and (min-width: $break-point) {
+          border-left-color: transparent;
+          &::after {
+            @include arrow(right, color-light, 2/3 * 1rem);
+          }
+          &::before {
+            @include arrow(right, color, 1rem);
+          }
+        }
+        @media screen and (max-width: $break-point) {
+          border-right-color: transparent;
+          &::after {
+            @include arrow(left, color-light, 2/3 * 1rem);
+          }
+          &::before {
+            @include arrow(left, color, 1rem);
+          }
+        }
+      }
+      h2 {
+        color: var(--color);
+        font-size: 1.25rem;
+        font-weight: bold;
+        &:first-of-type {
+          margin-top: 0;
+          padding-top: 0;
+        }
+      }
+      > ul:last-child {
+        margin-bottom: .5rem;
+      }
+    }
+    &__date {
+      color: var(--color);
+      left: auto;
+      padding-right: 2 * $gutter;
+      position: absolute;
+      right: 100%;
+      text-align: right;
+      width: 100%;
+      @media screen and (min-width: $break-point) {
+        .c-timeline__entry:nth-child(odd) & {
+          left: 100%;
+          padding-left: 2 * $gutter;
+          padding-right: 0;
+          right: auto;
+          text-align: left;
+        }
+      }
+    }
+    &__entry {
+      box-sizing: border-box;
+      margin-left: auto;
+      padding-left: $gutter;
+      width: 50%;
+      @media screen and (min-width: $break-point) {
+        &:nth-child(odd) {
+          margin-left: 0;
+          padding-left: 0;
+          padding-right: $gutter;
+        }
+      }
+      @media screen and (max-width: $break-point) {
+        margin-left: $center-line;
+        margin-right: auto;
+        width: auto;
+      }
+      &::before {
+        background-color: white;
+        border-radius: 50%;
+        border: $line-width solid var(--color);
+        content: "";
+        height: 1rem;
+        left: 0;
+        margin: .75rem auto 0;
+        position: absolute;
+        right: 0;
+        width: 1rem;
+        @media screen and (max-width: $break-point) {
+          left: $center-line - ($diameter-waypoint + $line-width) / 2;
+          right: auto;
+        }
+      }
+      @each $color in default danger info success warning {
+        &--#{$color} {
+          --color: #{color-palette($color)};
+          --color-light: #{color-palette($color, light)};
+        }
+      }
+      .c-timeline__entry + & {
+        margin-top: 1rem;
+      }
+    }
+    &__icon {
+      $size: 3rem;
+      background-color: white;
+      border: $line-width solid var(--color);
+      border-radius: 50%;
+      box-sizing: border-box;
+      color: var(--color);
+      height: $size;
+      font-size: 1.25rem;
+      left: 0;
+      line-height: 2;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      width: $size;
+      @media screen and (max-width: $break-point) {
+        left: $center-line - ($diameter-icon - 3 * $line-width) / 2;
+        right: auto;
+      }
+    }
+  }
+}

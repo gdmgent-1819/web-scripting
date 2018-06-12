@@ -1,0 +1,17 @@
+{%- assign presentation = include.presentation %}
+{%- if presentation %}
+{%- assign page_path = page.path | split: '/' %}
+{%- capture page_path_folder %}{{ page_path[0] }}/{{ page_path[1] }}/{{ page_path[2] }}/{% endcapture %} 
+<article class="card card--presentation" data-id="{{ presentation.title | slugify }}">
+    {{ path_prefix }}
+    <a href="{{ presentation.url | prepend: site.baseurl }}">
+        <picture class="card__image">
+          <img src="{{ site.url }}/{{ page_path_folder | append: presentation.thumbnail_url | prepend: '/' | prepend: site.baseurl }}">
+        </picture>
+        <div class="card__content">
+          <span class="card__title">{{ presentation.title }}</span>
+          <p>{{ presentation.description }}</p>
+        </div>
+    </a>
+</article>
+{%- endif %}
