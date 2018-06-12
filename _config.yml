@@ -6,9 +6,9 @@ port    : 4109
 
 # Course
 # ------
-syllabus-id: 1819-JAVASCRIPT
+syllabus-id: 1819-HTML-CSS
 
-hero_introduction : Syllabus voor het onderdeel JavaScript
+hero_introduction : Syllabus voor het onderdeel HTML & CSS
 hero_image        : /syllabus-resources/assets/images/header-dev.jpg
 words_per_minute  : 60
 
@@ -16,8 +16,8 @@ words_per_minute  : 60
 # ---
 domain      : Artevelde University College Ghent
 subdomain   : Bachelor of Graphical and Digital Media
-title       : JavaScript
-description : Syllabus voor het onderdeel JavaScript
+title       : HTML & CSS
+description : Syllabus voor het onderdeel HTML & CSS
 author      : Bachelor of Graphical and Digital Media | Artevelde University College Ghent
 copyright   : Copyright 2010-18 Artevelde University College Ghent. All Rights Reserved.
 
