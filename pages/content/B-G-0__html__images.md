@@ -109,6 +109,8 @@ Willen we nog uitgebreide toelichting geven aan iedere artiest in het bovenstaan
 `<picture>`{:.e}-element
 ------------------------
 
+Het `<picture>`{:.e}-element wordt gebruikt om meerdere versies van een afbeelding aan te bieden. Afhankelijk van het display van een device wordt een bepaalde versie van de afbeelding geactiveerd.
+
 > Zie ook
 > ---
 > - <https://www.sitepoint.com/quick-tip-the-right-way-to-use-figure-and-figcaption-elements/>
