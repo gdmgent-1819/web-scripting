@@ -1,4 +1,4 @@
-JavaScript
+Web Design
 ==========
 
 :thumbsup: `Graphics` :heart: `Code`
