@@ -2,11 +2,11 @@
 # -------------
 baseurl : /web-scripting # the subpath of your site, e.g. /blog
 host    : 127.0.0.1
-port    : 4109
+port    : 4107
 
 # Course
 # ------
-syllabus-id: 1819-HTML-CSS
+syllabus-id: 1819-WEBSCRIPTING
 
 hero_introduction : Syllabus voor het onderdeel Web Scripting
 hero_image        : /syllabus-resources/assets/images/header-dev.jpg
@@ -16,8 +16,8 @@ words_per_minute  : 60
 # ---
 domain      : Artevelde University College Ghent
 subdomain   : Bachelor of Graphical and Digital Media
-title       : HTML & CSS
-description : Syllabus voor het onderdeel HTML & CSS
+title       : Web Scripting
+description : Syllabus voor het onderdeel Web Scripting
 author      : Bachelor of Graphical and Digital Media | Artevelde University College Ghent
 copyright   : Copyright 2010-18 Artevelde University College Ghent. All Rights Reserved.
 
