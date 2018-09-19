@@ -25,9 +25,9 @@ JSON-syntax
 JSON bevat de volgende vorm:
 
 - Een object is een ongeordende lijst van **key/value** paren en begint met een `{` en eindigt met een `}`
-- Elke **key** wordt gevolgd door een `:` (dubbelpunt)
+- Elke **key** wordt gevolgd door een `:` (dubbelpunt)
 - De paren worden gescheiden door een `,` (comma)
-- Een **key** is altijd een string en begint met een `"` en eindigt met een `"`
+- Een **key** is altijd een string en begint met een `"` en eindigt met een `"`
 - De **value** kan de volgende **datatypen** bevatten: **string, number, object, array, boolean of null**
 
 Een **Number** datatype is een positief- of negatief decimaal getal met een dubbele-precisie floating-point formaat (maximaal 9 digits). De exponentiële `E` notatie (`e, e+, e-, E, E+, E-`) wordt ook toegelaten. De waarde 1.51E-6 komt overeen met de waarde 0.00000151. 
@@ -118,7 +118,7 @@ Methoden:
 - `JSON.parse(een string)`: JSON-object genereren van een bestaande string.
 - `JSON.stringify(een json-object)`: string genereren van een bestaand JSON-object.
 
-{% highlight json %}
+{% highlight js %}
 const person = `{
 	"firstName": "Philippe",
 	"lastName": "De Pauw - Waterschoot"
@@ -129,12 +129,12 @@ console.log(`${personObj.firstName} ${personObj.lastName}`); // output: Philippe
 
 Tijdens de conversie van een string naar een JSON-object kunner er fouten optreden, waaronder "Unexpected token". Om deze conversiefouten op te vangen kunnen we deze best omsluiten door een `try`/`catch`/`finally` block.
 
+{% highlight js %}
 const person = `{
 	firstName: "Philippe",
 	lastName": "De Pauw"
 }`;
 
-{% highlight json %}
 try {
 	const personObj = JSON.parse(person);
 	console.log(`${personObj.firstName} ${personObj.lastName}`);
@@ -144,6 +144,29 @@ try {
 	console.log('Continue application');
 }
 {% endhighlight %}
+
+Een object kan in JavaScript geconverteerd worden naar een JSON-string via de `JSON.stringify()` methode. Deze wordt vaak toegepast wanneer we informatie wensen te bewaren in de [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of in een database via een RESTful API.
+
+{% highlight js %}
+const personObject = {
+	firstName: 'Philippe',
+	lastName: 'De Pauw - Waterschoot'
+}
+
+const personStr = JSON.stringify(personObject, null, '\t');
+console.log(personStr);
+{% endhighlight %}
+
+{% highlight txt %}
+{
+	"firstName": "Philippe",
+	"lastName": "De Pauw - Waterschoot"
+}
+{% endhighlight %}
+
+Het 2de argument uit de `stringify` methode is de **replacer** functie, het 3de argument de **spacer**. Via de spacer kunnen we de output mooier maken door het inspringen (indentation) in te stellen. De waarde kan een cijfer of een string bevatten.
+
+
 
 
 JSON validatie
