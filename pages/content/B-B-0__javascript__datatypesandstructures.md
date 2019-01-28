@@ -38,3 +38,9 @@ De **primitieve waarden** kunnen zijn:
 `null`
 - Niet gedefinieerde waarde (declaratie van een variabele)  
 `undefined`
+
+
+> References
+> ---
+> - [Mozilla Developer Network: Data structures and types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Data_structures_and_types)
+{:.card.card-source}
