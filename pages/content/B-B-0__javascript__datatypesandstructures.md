@@ -4,12 +4,11 @@ title_long: Datatypen & datastructuren
 permalink: javascript/data-types-and-structures/
 ---
 
-Inleiding
----------
 
 Een programmeertaal dient in essentie om gegevens te manipuleren. Het datatype van een gegeven bepaalt welke manipulaties er op uitgevoerd kunnen worden. De datatypes zijn onder te verdelen in 3 soorten:
 
- ## Primitieve datatypes:
+ Primitieve datatypes:
+ ---------------------
 
 - Getallen (Numbers)  
 `46`, `2.365` of `NaN` (Not-a-Number)
@@ -22,11 +21,15 @@ Een programmeertaal dient in essentie om gegevens te manipuleren. Het datatype v
 - Niet gedefinieerde waarde (declaratie van een variabele)  
 `undefined`
 
- ## Samengestelde datatypes:
+ Samengestelde datatypes:
+ ------------------------
+
 - Array
 - Object
 
-## Built-in datatypes:
+Built-in datatypes:
+------------------
+
 - Math
 - Date
 
