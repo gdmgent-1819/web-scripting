@@ -208,3 +208,9 @@ Samenvatting
 > ---
 > De **identifier** van een variabele, ongeacht het keyword **moet uniek zijn**, en mag ook geen functie-identifier zijn.
 {:.card.card-remark}
+
+
+> References
+> ---
+> - [Mozilla Developer Network:Grammar and types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types#Declarations)
+{:.card.card-source}
