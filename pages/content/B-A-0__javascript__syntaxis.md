@@ -21,14 +21,14 @@ Voeg veelzeggende single line comments toe aan jouw script.
 
 ### Single line comments
 
-Single line comments starten met ***//***  tekst er tussen en eindigt met ***//*** . De content er tussen zal door JavaScript niet worden uitgevoerd.
+Single line comments starten met ```//```  en eindigt met ```//``` . Alle tekst er tussen zal door JavaScript worden genegeerd.
 
 Een goede gewoonte is om deze comments steeds in het Engels te schrijven (dit geldt trouwens ook voor de variables, methods, … 
 Aan de hand van de comments moet je kunnen afleiden wat je wil bereiken met jouw code.
 
 ### Multi-line comments
 
-Multi-line comments starten met /* en eindigd met */. Alle tekst tussen /* en */ Zal worden genegeerd door Javascript 
+Multi-line comments starten met ```/*``` en eindigd met ```*/```. Alle tekst tussen /* en */ Zal worden genegeerd door Javascript 
 
 vb:
 ```
