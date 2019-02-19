@@ -21,11 +21,22 @@ Voeg veelzeggende single line comments toe aan jouw script.
 
 ### Single line comments
 
-Single line comments start with //. Any text between // and the end of the line will be ignored by JavaScript (will not be executed).
+Single line comments starten met ***//***  tekst er tussen en eindigt met ***//*** . De content er tussen zal door JavaScript niet worden uitgevoerd.
 
 Een goede gewoonte is om deze comments steeds in het Engels te schrijven (dit geldt trouwens ook voor de variables, methods, … 
 Aan de hand van de comments moet je kunnen afleiden wat je wil bereiken met jouw code.
 
 ### Multi-line comments
 
-Multi-line comments start with /* and end with */. Any text between /* and */ will be ignored by JavaScript. (wijzig waar nodig!)
+Multi-line comments starten met /* en eindigd met */. Alle tekst tussen /* en */ Zal worden genegeerd door Javascript 
+
+vb:
+```
+/********************************************************************* 
+* @author     Voornaam Naam
+* @created    16/01/2019
+* @modified   18/01/2019
+* @copyright  Copyright © 2018-2019 Artevelde University College Ghent
+* @function   Plaats hier -  een korte samenvatting van jouw script
+*********************************************************************/
+```
