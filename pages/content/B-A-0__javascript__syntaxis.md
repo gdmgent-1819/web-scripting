@@ -13,7 +13,7 @@ Code blocks bevatten gegroepeerde statements, die samen uitgevoerd zullen worden
 
 [Gereserveerde identifiers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Reserved_Words) (keywords) kunnen niet als eigen identifier gebruikt worden. Identifiers zijn **hoofdlettergevoelig (case sensitive)**, bv.: `myCat` is niet hetzelfde als `MyCat`. Extra witruimte (white space) wordt genegeerd door JavaScript, maar maakt de code leesbaarder. Tekst in een string kan onderbroken worden naar een volgende regel met een backslash `\`. [Unicode character set](http://www.w3schools.com/charsets/ref_html_utf8.asp) (karakters, leestekens en symbolen) wordt gehanteerd.
 
-Commentaar
+Comments
 -----------
 
 Om de code begrijpbaar te maken voor derden is het interessant om commentaar bij onze code te plaatsen.  
