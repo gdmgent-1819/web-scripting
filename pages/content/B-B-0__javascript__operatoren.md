@@ -4,7 +4,19 @@ title_long: Operatoren
 permalink: javascript/operators/
 ---
 
-Wiskundige operatoren
+Toewijzings Operatoren
+----------------------
+
+| Operator | Betekenis                      |
+|:--------:|--------------------------------|
+|   `=`    | toewijzen van een waarde |
+{:.table.table--primary}
+
+```
+let greeting = 'Hello';
+```
+
+Wiskundige Operatoren
 ----------------------
 
 | Operator | Betekenis             |
@@ -34,9 +46,6 @@ let fullGreeting = greeting + ' ' + myName;
 console.log(fullGreeting);
 ```
 
-Toewijzings Operatoren
-----------------------
-
 Vergelijkende Operatoren
 ------------------------
 
@@ -57,5 +66,5 @@ Vergelijkende Operatoren
 |  `<=>`   | Ruimteschip           |
 {:.table.table--primary}
 
-Logische Operatoren
--------------------
+<!-- Logische Operatoren
+------------------- -->
