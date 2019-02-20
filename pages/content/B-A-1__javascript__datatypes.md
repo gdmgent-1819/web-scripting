@@ -21,20 +21,6 @@ Primitieve datatypes:
 - Niet gedefinieerde waarde (declaratie van een variabele)  
 `undefined`
 
-### String
-
-Strings kan je samen voegen door het gebruik van ```+```
-
-vb:
-
-```
-let greeting = 'Hello';
-let myName = 'Ellen';
-let fullGreeting = greeting + ' ' + myName;
-
-console.log(fullGreeting);
-```
-
 Samengestelde datatypes:
 ------------------------
 
