@@ -33,6 +33,20 @@ Switch Statement
 
 Dit statement komt overeen met een losse vergelijking. Een default op het einde is aangeraden om dit altijd toe te voegen om zo de onderhoudbaarheid en fouttolerantie van de code te bevorderen. Als een overeenkomst gevonden wordt, dan wordt alle volgende code tot aan de eerstvolgende break uitgevoerd.
 
+{% highlight js linenos %}
+let fruit = 'bananen';
+switch (fruit) {
+  case 'Appels':
+    console.log('Appels kunnen rood en groen zijn.');
+    break;
+  case 'bananen':
+    console.log('Bananen hebben een gele kleur.');
+    break;
+  default:
+    console.log('Deze fruit kennen we nog niet, dus hebben we geen kleur.');
+}
+{% endhighlight %}
+
 > References
 > ---
 > - [Mozilla Developer Network: Switch ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
