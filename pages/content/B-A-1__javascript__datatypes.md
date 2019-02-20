@@ -1,7 +1,7 @@
 ---
-title: Datatypen & datastructuren
-title_long: Datatypen & datastructuren
-permalink: javascript/data-types-and-structures/
+title: Datatypen
+title_long: Datatypen
+permalink: javascript/variabelen/data-types/
 ---
 
 
