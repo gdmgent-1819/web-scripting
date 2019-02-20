@@ -1,10 +1,10 @@
 ---
-title: Conditionels
-title_long: Conditionele Statements
+title: Statements
+title_long: Statements
 permalink: javascript/conditionele_statements/
 ---
 
-If Statement
+Conditionele If Statement
 ------------
 
 Een if statement wordt enkel uitgevoerd als de expressie tussen de haakjes WAAR is geëvalueerd. Tenslotte kunnen de if- en else if-statements uitgebreid worden met één else-statement dat uitgevoerd wordt als alle voorgaande if- en else if-statements als ONWAAR geëvalueerd werden.
