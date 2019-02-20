@@ -66,5 +66,21 @@ Vergelijkende Operatoren
 |  `<=>`   | Ruimteschip           |
 {:.table.table--primary}
 
-<!-- Logische Operatoren
-------------------- -->
+Logische Operatoren
+-------------------
+
+| Operator | Betekenis                      |
+|:--------:|--------------------------------|
+|   `&&`   | AND                            |
+|   `||`   | OR                             |
+|   `!`    | NOT                            |
+{:.table.table--primary}
+
+{% highlight js linenos %}
+let a = 10;
+
+if(a < 20 && a > 10 ){
+    
+}
+
+{% endhighlight %}
