@@ -14,6 +14,7 @@ Nodes
 
 We kunnen een element selecteren door zijn ID aan te spreken.
 Dit doen we door ```document.getElementById()``` te gebruiken.
+
 > References
 > ---
 > - [Mozilla Developer Network: document.getElementById](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
