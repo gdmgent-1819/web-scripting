@@ -12,9 +12,9 @@ Toewijzings Operatoren
 |   `=`    | toewijzen van een waarde |
 {:.table.table--primary}
 
-```
+{% highlight js linenos %}
 let greeting = 'Hello';
-```
+{% endhighlight %}
 
 Wiskundige Operatoren
 ----------------------
@@ -38,13 +38,13 @@ Concatenatie van Strings
 |   `+`    | Concatenatie (aaneenschakelen) |
 {:.table.table--primary}
 
-```
+{% highlight js linenos %}
 let greeting = 'Hello';
 let myName = 'Ellen';
 let fullGreeting = greeting + ' ' + myName;
 
 console.log(fullGreeting);
-```
+{% endhighlight %}
 
 Vergelijkende Operatoren
 ------------------------
