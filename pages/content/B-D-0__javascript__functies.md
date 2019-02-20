@@ -40,7 +40,7 @@ Als je de functie probeert uit te voeren voor dat de lijn code is gelezen, dan z
 **Declaratie**
 
 {% highlight js linenos %}
-var sayHi = function()
+let sayHi = function()
 {
     document.write("Hi! <br>");
 }
@@ -67,7 +67,7 @@ Wanneer de de code de return-statement heeft bereikt zal de functie ook stoppen 
 **Declaratie**
 
 {% highlight js linenos %}
-var getHiSentence = function()
+let getHiSentence = function()
 {
     return 'Hi!';
 }
@@ -90,7 +90,7 @@ Deze parameters gedragen zicht binnen de functie als variabelen.
 **Declaratie**
 
 {% highlight js linenos %}
-var sayHi = function(name, age)
+let sayHi = function(name, age)
 {
     document.write("Hey" + name + ".<br> You are" + age + "years old.");
 }
