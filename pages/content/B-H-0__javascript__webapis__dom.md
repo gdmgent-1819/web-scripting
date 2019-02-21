@@ -12,10 +12,25 @@ Nodes
 
 ### Selecteren van Nodes
 
+#### getElementById
+
 We kunnen een element selecteren door zijn ID aan te spreken.
 Dit doen we door ```document.getElementById()``` te gebruiken.
 
 > References
 > ---
 > - [Mozilla Developer Network: document.getElementById](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
+{:.card.card-source}
+
+
+
+#### querySelector
+
+We kunnen een element selecteren door een element aan te spreken.  
+Dit doen we door ```document.queryselector()``` te gebruiken.  
+Opgelet: enkel het eerste element dat overeenkomt zal worden geselecteerd.  
+
+> References
+> ---
+> - [Mozilla Developer Network: document.querySelector](https://developer.mozilla.org/nl/docs/Web/API/Document/querySelector)
 {:.card.card-source}
