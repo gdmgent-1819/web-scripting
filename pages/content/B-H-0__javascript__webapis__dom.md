@@ -34,3 +34,32 @@ Opgelet: enkel het eerste element dat overeenkomt zal worden geselecteerd.
 > ---
 > - [Mozilla Developer Network: document.querySelector](https://developer.mozilla.org/nl/docs/Web/API/Document/querySelector)
 {:.card.card-source}
+
+
+### toevoegingen aan Nodes
+
+#### innerHTML
+
+> References
+> ---
+> - [Mozilla Developer Network: .innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+{:.card.card-source}
+
+
+
+#### innerText
+
+> References
+> ---
+> - [Mozilla Developer Network: .innerText](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText)
+{:.card.card-source}
+
+
+#### textContent
+
+> References
+> ---
+> - [Mozilla Developer Network: .textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+{:.card.card-source}
+
+
